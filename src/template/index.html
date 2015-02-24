@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>UA Libraries Styleguide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
+  <link rel="stylesheet" href="public/ualib-styleguide.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="../assets/css/vendor.css" rel="stylesheet">
+  {{{styles}}}
+</head>
+<body data-spy="scroll" data-target="#styleguide-nav" data-offset="90">
+<header id="header-nav">
+  <nav class="navbar navbar-static-top  navbar-ualib yamm" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html" >UA Lib Web Docs</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Styleguide</a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content ualib-mm">
+                  <div class="row">
+                    <ul class="list-unstyled">
+                      {{#eachRoot}}
+                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms"{{#isRoot @root.rootNumber}}  class="active" {{/isRoot}}>
+                        <a href="section-{{reference}}.html">
+                          {{#if icon}}
+                            <span class="fa {{icon}}"></span>
+                          {{/if}}
+                          <h4>{{header}}</h4>
+                          {{#if titleslug}}
+                            <p>{{titleslig}}</p>
+                          {{/if}}
+                        </a>
+                      </li>
+                      {{/eachRoot}}
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://github.com/ualibweb/ualibweb.github.io" target="_new"><span class="fa fa-github"></span> Github</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quick Links</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://getbootstrap.com/"><span class="fa fa-fw fa-border">B</span> Bootstrap Docs</a></li>
+              <li><a href="http://fortawesome.github.io/Font-Awesome/"><span class="fa fa-fw fa-flag"></span> Font Awesome</a></li>
+              <li><a href="https://www.google.com/fonts"><span class="fa fa-fw fa-paint-brush"></span> Google Fonts</a></li>
+              <li><a href="http://webaim.org/resources/contrastchecker/"><span class="fa fa-fw fa-adjust"></span> WCAG AA Contrast Checker</a></li>
+              <li><a href="https://color.adobe.com"><span class="fa fa-fw fa-eyedropper"></span> Adobe Color CC</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="content">
+    <main class="main" role="main">
+        <div class="jumbotron jumbotron-head">
+          <div class="container">
+            {{#if homepage}}
+              <h1>Styleguide</h1>
+              <p class="lead">CSS, Components, and Layout details</p>
+            {{else}}
+              {{#section rootName}}
+                <h1>{{header}}</h1>
+
+                {{#if description}}
+                  {{{description}}}
+                {{/if}}
+              {{/section}}
+            {{/if}}
+          </div>
+        </div>
+        <div class="container">
+          {{#if homepage}}
+            <div class="col-xs-12">{{{homepage}}}</div>
+          {{else}}
+            <div class="col-sm-2 col-sm-push-10">
+              <nav class="fixie-menu">
+                <ul class="nav nav-submenu">
+                  {{#eachSection rootName}}
+                    {{#ifDepth 2}}
+                      <li>
+                        <a href="#{{scrollSpyId reference}}" du-smooth-scroll du-scrollspy offset="100">
+                          {{header}}
+                        </a>
+                        <ul class="nav">
+                          {{#eachSection reference}}
+                            {{#ifDepth 3}}
+                              <li>
+                                <a href="#{{scrollSpyId reference}}" du-smooth-scroll du-scrollspy offset="100">
+                                  {{header}}
+                                </a>
+                              </li>
+                            {{/ifDepth}}
+                          {{/eachSection}}
+                        </ul>
+                      </li>
+                    {{/ifDepth}}
+                  {{/eachSection}}
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-10 col-sm-pull-2">
+              {{#eachSection rootName}}
+                {{#unlessDepth 1}}
+                  <div class="section" id="{{scrollSpyId reference}}">
+                    <h{{depth}}>{{header}}</h{{depth}}>
+
+                    {{#if description}}
+                      {{{description}}}
+                    {{/if}}
+
+                    {{#if codetemplate}}
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                          {{#if markup}}
+                            {{{markup}}}
+                          {{/if}}
+                        </div>
+                        <div class="panel-footer">
+                          <pre>
+                            <code class="html">{{codetemplate}}</code>
+                          </pre>
+                        </div>
+                      </div>
+                    {{else}}
+                      {{#if markup}}
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              {{#if modifiers}}
+                                <div class="muted">Default:</div>
+                              {{/if}}
+                              {{{markup}}}
+
+                            {{#eachModifier}}
+                              <p>
+                                <div>{{name}}</div>
+                                <div>{{{description}}}</div>
+                                <div>{{{markup}}}</div>
+                              </p>
+                            {{/eachModifier}}
+                          </div>
+                          {{#unless hidemarkup}}
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html">{{markup}}</code>
+                            </pre>
+                          </div>
+                          {{/unless}}
+                        </div>
+                      {{/if}}
+                    {{/if}}
+                  </div>
+                {{/unlessDepth}}
+              {{/eachSection}}
+            </div>
+          {{/if}}
+        </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

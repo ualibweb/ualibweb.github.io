@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>UA Libraries Styleguide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
+  <link rel="stylesheet" href="public/ualib-styleguide.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="../assets/css/vendor.css" rel="stylesheet">
+  
+</head>
+<body data-spy="scroll" data-target="#styleguide-nav" data-offset="90">
+<header id="header-nav">
+  <nav class="navbar navbar-static-top  navbar-ualib yamm" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html" >UA Lib Web Docs</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Styleguide</a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content ualib-mm">
+                  <div class="row">
+                    <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms">
+                        <a href="section-style.html">
+                          <h4>Style</h4>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms">
+                        <a href="section-layout.html">
+                          <h4>Layout</h4>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://github.com/ualibweb/ualibweb.github.io" target="_new"><span class="fa fa-github"></span> Github</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quick Links</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://getbootstrap.com/"><span class="fa fa-fw fa-border">B</span> Bootstrap Docs</a></li>
+              <li><a href="http://fortawesome.github.io/Font-Awesome/"><span class="fa fa-fw fa-flag"></span> Font Awesome</a></li>
+              <li><a href="https://www.google.com/fonts"><span class="fa fa-fw fa-paint-brush"></span> Google Fonts</a></li>
+              <li><a href="http://webaim.org/resources/contrastchecker/"><span class="fa fa-fw fa-adjust"></span> WCAG AA Contrast Checker</a></li>
+              <li><a href="https://color.adobe.com"><span class="fa fa-fw fa-eyedropper"></span> Adobe Color CC</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="content">
+    <main class="main" role="main">
+        <div class="jumbotron jumbotron-head">
+          <div class="container">
+              <h1>Styleguide</h1>
+              <p class="lead">CSS, Components, and Layout details</p>
+          </div>
+        </div>
+        <div class="container">
+            <div class="col-xs-12"> <h1 id="ua-libraries-style-guide">UA Libraries Style Guide</h1>
+<p>This styleguide is intended for web developers (e.g., not &#39;content creators/editors&#39;). It gives basic information about the primary classes/features available.
+For now, this styleguide is being generating using <a href="https://github.com/kss-node/kss-node">kss-node</a>. Unforunately, kss-node doesn&#39;t offer
+all the features we will need, so it will likely be abandoned for another method when we need to development the styleguide for content creators.</p>
+<h2 id="first-steps">First Steps</h2>
+<p>The UA Libraries website CSS is modified from <a href="http://getbootstrap.com/">Bootstrap 3.2.0</a>. The current build of the CSS supports all Bootstrap features,
+but the features will likely be narrowed down to only what is essential. The list below links to Bootstrap topics/features that the UA Libraries CSS will
+likely be features of the finalized UA Libraries Styles.</p>
+<p>Although all of Bootstrap&#39;s capabilities are currently available (subject to change),
+it is strongly recommended you read through the the linked <em>recommended Bootstrap capabilities</em> linked below:</p>
+<ul>
+<li>CSS<ul>
+<li><a href="http://getbootstrap.com/css/#overview-container">Containers</a></li>
+<li><a href="http://getbootstrap.com/css/#grid">Grid system</a><ul>
+<li>Read through every sub-topic except &quot;Less mixins and variables&quot;</li>
+</ul>
+</li>
+<li>Tables<ul>
+<li><a href="http://getbootstrap.com/css/#tables-responsive">Responsive Tables</a></li>
+</ul>
+</li>
+<li><a href="http://getbootstrap.com/css/#forms">Forms</a></li>
+<li>Images<ul>
+<li><a href="http://getbootstrap.com/css/#images-responsive">Responsive images</a></li>
+</ul>
+</li>
+<li>Helper classes<ul>
+<li><a href="http://getbootstrap.com/css/#helper-classes-carets">Carets</a></li>
+<li><a href="http://getbootstrap.com/css/#helper-classes-floats">Quick floats</a></li>
+<li><a href="http://getbootstrap.com/css/#helper-classes-screen-readers">Screen reader content</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Components<ul>
+<li><a href="http://getbootstrap.com/components/#dropdowns">Dropdowns</a></li>
+<li><a href="http://getbootstrap.com/components/#btn-groups">Button groups</a></li>
+<li><a href="http://getbootstrap.com/components/#btn-dropdowns">Button dropdowns</a></li>
+<li><a href="http://getbootstrap.com/components/#input-groups">Input groups</a></li>
+<li><a href="http://getbootstrap.com/components/#nav">Navs</a></li>
+<li><a href="http://getbootstrap.com/components/#navbar">Navbar</a></li>
+<li><a href="http://getbootstrap.com/components/#labels">Labels</a></li>
+<li><a href="http://getbootstrap.com/components/#thumbnails">Thumbnails</a></li>
+<li>Alerts<ul>
+<li><a href="http://getbootstrap.com/components/#alerts-dismissible">Dissmissable alerts</a></li>
+<li><a href="http://getbootstrap.com/components/#alerts-links">Links in alerts</a></li>
+</ul>
+</li>
+<li><a href="http://getbootstrap.com/components/#media">Media object</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="using-the-css">Using the CSS</h2>
+<p>For development use the <a href="https://rawgit.com/">RawGit</a> service for the header include. You can change the link to your own fork as well.</p>
+<p><strong>Note:</strong> Only use this link for low-traffic dev or demo sites.</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://rawgit.com/ualibweb/ualib-styles/gh-pages/dist/ualib-styles.min.css&quot;&gt;
+</code></pre><h3 id="issues-and-feature-requests">Issues and feature requests</h3>
+<p>Use github&#39;s <a href="https://github.com/ualibweb/ualib-styles/issues">issues system</a> to report problems or make feature requests. To do this, you must first create a github account. Afterwards, let me know you account name and I&#39;ll add you as a contributor.</p>
+<hr>
+<h2 id="forking-installing-and-building-the-ua-libraries-styles-and-styleguide">Forking, installing, and building the UA Libraries styles and styleguide</h2>
+<h3 id="requirements">Requirements</h3>
+<p>You must have the following software install on your computer to build the CSS and Styleguide. Grunt and Bower both require Node.js, so install Node first.</p>
+<ol>
+<li><a href="http://nodejs.org/">Node.js</a><ul>
+<li>Go to their <a href="http://nodejs.org/download/">downloads page</a> and install the appropriate package</li>
+</ul>
+</li>
+<li><a href="http://gruntjs.com/">Grunt.js</a><ul>
+<li><a href="http://gruntjs.com/getting-started#installing-the-cli">See here</a> for installation instructions</li>
+</ul>
+</li>
+<li><a href="http://bower.io/">Bower</a><ul>
+<li><a href="http://bower.io/#install-bower">See here</a> for installation</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="forking-repo-and-installing-dependencies">Forking repo and Installing dependencies</h3>
+<ol>
+<li>Create you own fork of the <a href="https://github.com/ualibweb/ualib-styles">ualibweb/ualib-styles</a> repo. <a href="https://help.github.com/articles/fork-a-repo/">See here</a> for instructions on forking a github repo.<ul>
+<li>The default branch for this repo is <code>gh-pages</code>. Any <a href="https://help.github.com/articles/using-pull-requests/">pull requests</a> will be merged with this branch.</li>
+</ul>
+</li>
+<li>Run <code>npm install -g kss</code> in the command line to install <code>kss-node</code> globally.</li>
+<li>Run <code>npm install</code> to install dependencies for <code>grunt</code> (ensure you&#39;re in the same folder as the <code>package.json</code> file).</li>
+<li>Run <code>bower install</code> in the command line (ensure you&#39;re in the same folder as the <code>bower.json</code> file).</li>
+</ol>
+<hr>
+<h3 id="build-everything-css-and-styleguide-">Build everything (CSS and Styleguide)</h3>
+<ol>
+<li>Run <code>grunt</code> or <code>grunt default</code></li>
+</ol>
+<h3 id="build-css-only">Build CSS only</h3>
+<ol>
+<li>Run <code>grunt css</code></li>
+</ol>
+<hr>
+<h4 id="the-final-css-file-s-are-build-to">The final CSS file(s) are build to</h4>
+<pre><code>dist/css/
+</code></pre><h4 id="the-styleguide-is-build-to">The Styleguide is build to</h4>
+<pre><code>styleguide/
+</code></pre></div>
+        </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

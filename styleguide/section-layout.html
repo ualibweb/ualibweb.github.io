@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>UA Libraries Styleguide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
+  <link rel="stylesheet" href="public/ualib-styleguide.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="../assets/css/vendor.css" rel="stylesheet">
+  
+</head>
+<body data-spy="scroll" data-target="#styleguide-nav" data-offset="90">
+<header id="header-nav">
+  <nav class="navbar navbar-static-top  navbar-ualib yamm" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html" >UA Lib Web Docs</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Styleguide</a>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content ualib-mm">
+                  <div class="row">
+                    <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms">
+                        <a href="section-style.html">
+                          <h4>Style</h4>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms">
+                        <a href="section-layout.html">
+                          <h4>Layout</h4>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://github.com/ualibweb/ualibweb.github.io" target="_new"><span class="fa fa-github"></span> Github</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quick Links</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://getbootstrap.com/"><span class="fa fa-fw fa-border">B</span> Bootstrap Docs</a></li>
+              <li><a href="http://fortawesome.github.io/Font-Awesome/"><span class="fa fa-fw fa-flag"></span> Font Awesome</a></li>
+              <li><a href="https://www.google.com/fonts"><span class="fa fa-fw fa-paint-brush"></span> Google Fonts</a></li>
+              <li><a href="http://webaim.org/resources/contrastchecker/"><span class="fa fa-fw fa-adjust"></span> WCAG AA Contrast Checker</a></li>
+              <li><a href="https://color.adobe.com"><span class="fa fa-fw fa-eyedropper"></span> Adobe Color CC</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="content">
+    <main class="main" role="main">
+        <div class="jumbotron jumbotron-head">
+          <div class="container">
+                <h1>Layout</h1>
+
+                  <p>Layout definitions for University of Alabama Libraries website</p>
+
+          </div>
+        </div>
+        <div class="container">
+            <div class="col-sm-2 col-sm-push-10">
+              <nav class="fixie-menu">
+                <ul class="nav nav-submenu">
+                      <li>
+                        <a href="#layout-grid" du-smooth-scroll du-scrollspy offset="100">
+                          The Grid
+                        </a>
+                        <ul class="nav">
+                              <li>
+                                <a href="#layout-grid-creation" du-smooth-scroll du-scrollspy offset="100">
+                                  Grid creation
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#layout-grid-options" du-smooth-scroll du-scrollspy offset="100">
+                                  Grid options
+                                </a>
+                              </li>
+                        </ul>
+                      </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-10 col-sm-pull-2">
+                  <div class="section" id="layout-grid">
+                    <h2>The Grid</h2>
+
+                      <p>The grid is essential for a website to be responsive - adapting properly for all devices,
+from phone to desktop to jumbotron! The grid can support a maximum 12 columns of equal size.
+But don&#39;t worry, you can any number of columns, as long as they don&#39;t go over 12!</p>
+
+
+                  </div>
+                  <div class="section" id="layout-grid-creation">
+                    <h3>Grid creation</h3>
+
+                      <p>To create a <code>grid</code> you must define <code>rows</code> and then put <code>columns</code> inside those <code>rows</code>.</p>
+
+
+                  </div>
+                  <div class="section" id="layout-grid-options">
+                    <h3>Grid options</h3>
+
+                      <p>You define column size by using one of 4 dynamic <code>css classes</code>. Each class is
+designed to adjust column sizes relative to different device sizes</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th></th>
+            <th>
+                Extra small devices
+                <small>Phones (&lt;768px)</small>
+            </th>
+            <th>
+                Small devices
+                <small>Tablets (≥768px)</small>
+            </th>
+            <th>
+                Medium devices
+                <small>Desktops (≥992px)</small>
+            </th>
+            <th>
+                Large devices
+                <small>Desktops (≥1200px)</small>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th class="text-nowrap" scope="row">Grid behavior</th>
+            <td>Horizontal at all times</td>
+            <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row">Container width</th>
+            <td>None (auto)</td>
+            <td>750px</td>
+            <td>970px</td>
+            <td>1170px</td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row">Class prefix</th>
+            <td><code>.col-xs-</code></td>
+            <td><code>.col-sm-</code></td>
+            <td><code>.col-md-</code></td>
+            <td><code>.col-lg-</code></td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row"># of columns</th>
+            <td colspan="4">12</td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row">Column width</th>
+            <td class="text-muted">Auto</td>
+            <td>~62px</td>
+            <td>~81px</td>
+            <td>~97px</td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row">Gutter width</th>
+            <td colspan="4">30px (15px on each side of a column)</td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row">Nestable</th>
+            <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row">Offsets</th>
+            <td colspan="4">Yes</td>
+        </tr>
+        <tr>
+            <th class="text-nowrap" scope="row">Column ordering</th>
+            <td colspan="4">Yes</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+                          </div>
+                        </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

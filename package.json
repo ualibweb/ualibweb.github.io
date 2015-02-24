@@ -1,0 +1,33 @@
+{
+  "name": "ualibweb.github.io",
+  "version": "0.1.0",
+  "description": "Styleguide and documentation for the University of Alabama Libraries website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ualibweb/ualibweb.github.io.git"
+  },
+  "keywords": [
+    "styleguide",
+    "UA Libraries",
+    "University of Alabama Libraries",
+    "ualib",
+    "ualibweb"
+  ],
+  "author": "Will Jones",
+  "license": "ECL-2.0",
+  "bugs": {
+    "url": "https://github.com/ualibweb/ualibweb.github.io/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "kss": "2.0.1",
+    "grunt-github-fetch": "~0.1.2",
+    "grunt-curl": "~2.1.0",
+    "grunt-github-api": "~0.2.3",
+    "grunt-exec": "~0.4.6",
+    "grunt-contrib-less": "~1.0.0",
+    "grunt-contrib-cssmin": "~0.12.2",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-copy": "~0.8.0"
+  }
+}

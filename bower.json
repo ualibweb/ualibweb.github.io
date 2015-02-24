@@ -1,0 +1,34 @@
+{
+  "name": "ualibweb.github.io",
+  "version": "0.1.0",
+  "homepage": "https://ualibweb.github.io",
+  "authors": [
+    "Will Jones <will@8bitsquid.com>"
+  ],
+  "description": "Documentation, styleguide, and components for the University of Alabama Libraries' website",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "UA",
+    "UA Library",
+    "University of Alabama Libraries",
+    "University Libraries",
+    "ualib",
+    "styleguide"
+  ],
+  "license": "ECL-2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "fontawesome": "~4.3.0",
+    "Yamm3": "https://github.com/geedmo/yamm3/archive/master.zip"
+  }
+}
