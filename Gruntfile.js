@@ -13,7 +13,8 @@ module.exports = function (grunt) {
         concat: {
             vendor_css: {
                 src: [
-                    'bower_components/Yamm3/yamm/yamm.css'
+                    'bower_components/Yamm3/yamm/yamm.css',
+                    'bower_components/ualib-ui/dist/ui-components.css'
                 ],
                 dest: 'assets/css/vendor.css'
             },
@@ -22,7 +23,9 @@ module.exports = function (grunt) {
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-animate/angular-animate.min.js',
                     'bower_components/angular-strap/dist/angular-strap.min.js',
-                    'bower_components/angular-strap/dist/angular-strap.tpl.min.js'
+                    'bower_components/angular-strap/dist/angular-strap.tpl.min.js',
+                    'bower_components/ualib-ui/dist/ui-components-templates.js',
+                    'bower_components/ualib-ui/dist/ui-components.js'
                 ],
                 dest: 'assets/js/vendor.js'
             }
