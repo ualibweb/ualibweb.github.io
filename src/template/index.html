@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
-<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en" ng-app="styleguide"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>UA Libraries Styleguide</title>
@@ -15,15 +15,16 @@
   <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
+  <link href="../assets/css/vendor.css" rel="stylesheet">
   <link rel="stylesheet" href="public/ualib-styleguide.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="../assets/css/vendor.css" rel="stylesheet">
+  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.css" rel="stylesheet">
   {{{styles}}}
 </head>
-<body data-spy="scroll" data-target="#styleguide-nav" data-offset="90">
+<body>
 <header id="header-nav">
-  <nav class="navbar navbar-static-top  navbar-ualib yamm" role="navigation">
-    <div class="container">
+  <nav class="navbar navbar-static-top navbar-mega" role="navigation">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -36,33 +37,39 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          {{#eachRoot}}
           <li class="dropdown yamm-fw">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Styleguide</a>
+            <a href="#" class="dropdown-toggle">{{header}}</a>
+
             <ul class="dropdown-menu">
               <li>
-                <div class="yamm-content ualib-mm">
+                <div class="yamm-content">
                   <div class="row">
-                    <ul class="list-unstyled">
-                      {{#eachRoot}}
-                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms"{{#isRoot @root.rootNumber}}  class="active" {{/isRoot}}>
-                        <a href="section-{{reference}}.html">
+                     <ul class="list-unstyled">
+                       {{#eachSection reference}}
+                       {{#ifDepth 2}}
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-{{../../referenceURI}}.html#{{scrollSpyId referenceURI}}">
                           {{#if icon}}
                             <span class="fa {{icon}}"></span>
                           {{/if}}
                           <h4>{{header}}</h4>
-                          {{#if titleslug}}
-                            <p>{{titleslig}}</p>
+                          {{#if menublurb}}
+                            <p>{{menublurb}}</p>
                           {{/if}}
                         </a>
                       </li>
-                      {{/eachRoot}}
+                       {{/ifDepth}}
+                      {{/eachSection}}
                     </ul>
+
                   </div>
                 </div>
               </li>
             </ul>
-          </li>
 
+          </li>
+          {{/eachRoot}}
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -90,8 +97,8 @@
         <div class="jumbotron jumbotron-head">
           <div class="container">
             {{#if homepage}}
-              <h1>Styleguide</h1>
-              <p class="lead">CSS, Components, and Layout details</p>
+              <h1>University Libraries Web Docs</h1>
+              <p class="lead">Writing for the web, Styleguide, Website Components, and Resources.</p>
             {{else}}
               {{#section rootName}}
                 <h1>{{header}}</h1>
@@ -108,19 +115,19 @@
             <div class="col-xs-12">{{{homepage}}}</div>
           {{else}}
             <div class="col-sm-2 col-sm-push-10">
-              <nav class="fixie-menu">
+              <nav class="fixie-menu navbar-styleguide">
                 <ul class="nav nav-submenu">
                   {{#eachSection rootName}}
                     {{#ifDepth 2}}
-                      <li>
-                        <a href="#{{scrollSpyId reference}}" du-smooth-scroll du-scrollspy offset="100">
+                      <li data-target="#{{scrollSpyId reference}}" bs-scrollspy>
+                        <a class="menu-item" href="#{{scrollSpyId reference}}">
                           {{header}}
                         </a>
-                        <ul class="nav">
+                        <ul class="nav ">
                           {{#eachSection reference}}
                             {{#ifDepth 3}}
-                              <li>
-                                <a href="#{{scrollSpyId reference}}" du-smooth-scroll du-scrollspy offset="100">
+                              <li data-target="#{{scrollSpyId reference}}" bs-scrollspy>
+                                <a class="submenu-item" href="#{{scrollSpyId reference}}">
                                   {{header}}
                                 </a>
                               </li>
@@ -202,7 +209,55 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+<script src="../assets/js/vendor.js"></script>
+<script src="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components-templates.js"></script>
+<script src="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script>
+  angular.module('styleguide', ['ngAnimate', 'mgcrea.ngStrap', 'ualib.ui'])
 
+          /*.run(['$rootScope', function($rootScope){
+            $rootScope.$on('duScrollspy:becameActive', function(event, elm){
+              /*console.log({
+                ev: event,
+                element: elm
+              })*
+            })
+          }])*/
+
+          .directive('fixieMenu', ['$window', function($window){
+            return {
+              restrict: 'AC',
+              link: function(scope, elm, attrs){
+                var width = elm[0].offsetWidth;
+                var fixed = false;
+                var fixieClass = 'nav-fixed';
+                var offset = 350;
+                angular.element($window).bind('scroll', fixieScroll);
+                function fixieScroll(ev){
+                  if (this.pageYOffset > offset) {
+                    if (!fixed){
+                      console.log(width);
+                      elm.addClass(fixieClass);
+                      elm.css('width', width+'px');
+                      fixed = true;
+                    }
+                  }
+                  else {
+                    if (fixed){
+                      elm.removeClass(fixieClass);
+                      elm.css('width', 'auto');
+                      fixed = false;
+                    }
+                  }
+                  scope.$apply();
+                }
+                scope.$on('$destroy', function(){
+                  angular.element($window).unbind('scroll', fixieScroll);
+                });
+              }
+            }
+          }]);
+</script>
 </body>
 </html>

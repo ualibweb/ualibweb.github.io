@@ -1,4 +1,4 @@
-@import "../../less/_variables.less";
+@import "../../less/_variables";
 body{
   position: relative;
 
@@ -19,6 +19,15 @@ hr{
   border-color: #ddd;
 }
 
+.menu-col:nth-child(4n+1) {
+  clear: both;
+}
+
+.section{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .jumbotron-head{
   background-color: #993333;
   color: #f6f6f6;
@@ -28,56 +37,52 @@ hr{
   }
 }
 
-.navbar-inverse .navbar-brand{
-  color: #f6f6f6;
-}
-
-.navbar-right > li > a{
-  font-size: 18px;
-}
-
-.navbar-styleguide{
-  margin-bottom: 0 !important;
-  backgroung-color: @gray-lighter !important;
-  font-family: @headings-font-family;
-  font-size: 16px;
-
-  & a{
-    color: @brand-primary !important;
-  }
-
-  & .navbar-nav{
-    font-size: .95em;
-  }
-}
-
 
 /* styleguide nav */
 
 .nav-fixed{
-  top: 72px;
+  top: 30px;
   position: fixed;
 }
 
-.styleguide-nav > .nav > li > a{
-  font-family: 'Ubuntu', sans-serif;
-}
-
-.styleguide-nav > .nav > li > .styleguide-nav-3{
-  //padding-left: 30px;
-}
-
-.styleguide-nav > .nav-pills {
+.nav-submenu {
   > li {
     // Active state
-    &.active > a {
-      &,
-      &:hover,
-      &:focus {
+    a {
+      color: @brand-primary;
+    }
+
+    &.active,
+    &:hover,
+    &:focus {
+      > a{
         color: @nav-pills-active-link-hover-color;
-        background-color: @link-color;
+        background-color: @brand-primary;
       }
     }
+
+    &.active > ul{
+      display: block;
+    }
+
+    > ul {
+      display: none;
+      > li{
+
+        > a, a:hover {
+          padding-left: 15px;
+          border-left: 2px solid @body-bg;
+        }
+        &.active,
+        &:hover,
+        &:focus {
+          > a, a:hover, a:active, a:focus {
+            border-color: @gray-light;
+          }
+        }
+      }
+    }
+
   }
 }
 

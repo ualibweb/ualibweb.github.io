@@ -11,18 +11,20 @@ module.exports = function (grunt) {
             ' Licensed <%= props.license %> */\n',
         // Task configuration
         concat: {
-            index: {
-                src: 'src/index.html',
-                dest: 'index.html',
-                options: {
-                    process: true
-                }
-            },
             vendor_css: {
                 src: [
                     'bower_components/Yamm3/yamm/yamm.css'
                 ],
                 dest: 'assets/css/vendor.css'
+            },
+            vendor_js: {
+                src: [
+                    'bower_components/angular/angular.min.js',
+                    'bower_components/angular-animate/angular-animate.min.js',
+                    'bower_components/angular-strap/dist/angular-strap.min.js',
+                    'bower_components/angular-strap/dist/angular-strap.tpl.min.js'
+                ],
+                dest: 'assets/js/vendor.js'
             }
         },
         cssmin: {
@@ -36,12 +38,32 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        clean: {
+            src: ['src/less/**']
+        },
         copy: {
+            src: {
+                files: [{
+                    expand: true,
+                    cwd: 'bower_components/roots-ualib/assets/css/less',
+                    src: ['**'],
+                    dest: 'src/less/',
+                    filter: 'isFile'
+                }]
+            },
             dist:{
                 files: [{
-                    src: ['src/assets/img/'],
-                    dest: 'assets/img/',
+                    expand: true,
+                    cwd: 'src/assets',
+                    src: ['**'],
+                    dest: 'assets/',
                     filter: 'isFile'
+                },{
+                    src: ['src/index.html'],
+                    dest: 'index.html',
+                    options: {
+                        process: true
+                    }
                 }]
             }
         },
@@ -101,20 +123,12 @@ module.exports = function (grunt) {
                 tasks: ['jshint:lib_test', 'qunit']
             }
         },
-        github:{
-            ualibweb:{
-                options: {
-                    task: {
-                        type: 'file'
-                    }
-                },
-                src: '/repos/ualibweb/ualib-styles/contents/src/styles',
-                dest: 'src/styles.json'
-            }
-        },
         exec: {
             kss: {
-                command: 'kss-node src/less styleguide --template src/template --helpers src/template/helpers --custom codetemplate --custom hidemarkup'
+                command: 'kss-node src/less styleguide --template src/template --helpers src/template/helpers --custom codetemplate --custom hidemarkup --custom icon --custom menublurb'
+            },
+            prep: {
+                command: 'bower update roots-ualib'
             }
         }
     });
@@ -125,8 +139,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task
-    grunt.registerTask('default', ['exec', 'less', 'concat', 'cssmin']);
+    grunt.registerTask('default', ['prep', 'exec:kss', 'less', 'concat', 'cssmin', 'copy:dist']);
+    grunt.registerTask('prep', ['exec:prep', 'clean:src', 'copy:src']);
 };
 

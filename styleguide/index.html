@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
-<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en" ng-app="styleguide"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <title>UA Libraries Styleguide</title>
@@ -15,15 +15,16 @@
   <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
+  <link href="../assets/css/vendor.css" rel="stylesheet">
   <link rel="stylesheet" href="public/ualib-styleguide.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="../assets/css/vendor.css" rel="stylesheet">
+  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.css" rel="stylesheet">
   
 </head>
-<body data-spy="scroll" data-target="#styleguide-nav" data-offset="90">
+<body>
 <header id="header-nav">
-  <nav class="navbar navbar-static-top  navbar-ualib yamm" role="navigation">
-    <div class="container">
+  <nav class="navbar navbar-static-top navbar-mega" role="navigation">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -37,29 +38,130 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="dropdown yamm-fw">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Styleguide</a>
+            <a href="#" class="dropdown-toggle">Components</a>
+
             <ul class="dropdown-menu">
               <li>
-                <div class="yamm-content ualib-mm">
+                <div class="yamm-content">
                   <div class="row">
-                    <ul class="list-unstyled">
-                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms">
-                        <a href="section-style.html">
-                          <h4>Style</h4>
+                     <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-components.html#components-dropdowns">
+                            <span class="fa fa-caret-square-o-down"></span>
+                          <h4>Dropdowns</h4>
+                            <p>Dropdowns for navigation and forms</p>
                         </a>
                       </li>
-                      <li class="col-xs-3 menu-col menu-practice-presentation-rooms">
-                        <a href="section-layout.html">
-                          <h4>Layout</h4>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-components.html#components-megamenu">
+                            <span class="fa th-list"></span>
+                          <h4>Mega Menu</h4>
+                            <p>Megamenu for main website navigation</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-components.html#components-pages_submenus">
+                            <span class="fa fs-columns"></span>
+                          <h4>Pages &amp; Submenus</h4>
+                            <p>Automatically generate submenus using the Page component</p>
                         </a>
                       </li>
                     </ul>
+
                   </div>
                 </div>
               </li>
             </ul>
-          </li>
 
+          </li>
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle">Style</a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content">
+                  <div class="row">
+                     <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-buttons">
+                            <span class="fa fa-hand-o-up"></span>
+                          <h4>Buttons</h4>
+                            <p>Types of buttons available to use on the website</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-color">
+                            <span class="fa fa-eyedropper"></span>
+                          <h4>Colors</h4>
+                            <p>Color scheme for the website and how to use them</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-icons">
+                            <span class="fa fa-info-circle"></span>
+                          <h4>Icons</h4>
+                            <p>Available icons and how to use them</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-images">
+                            <span class="fa fa-image"></span>
+                          <h4>Images</h4>
+                            <p>Using images in a responsive way</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-links">
+                            <span class="fa fa-link"></span>
+                          <h4>Links</h4>
+                            <p>Link types and their decoration</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-tables">
+                            <span class="fa fa-tables"></span>
+                          <h4>Tables</h4>
+                            <p>Types of tables and where to use them</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-typography">
+                            <span class="fa fa-font"></span>
+                          <h4>Typography</h4>
+                            <p>Fonts used for body, heading, and other text elements</p>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </li>
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle">Layout</a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content">
+                  <div class="row">
+                     <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-layout.html#layout-grid">
+                            <span class="fa fa-th"></span>
+                          <h4>The Grid</h4>
+                            <p>Make responsive layouts using the grid</p>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -86,113 +188,107 @@
     <main class="main" role="main">
         <div class="jumbotron jumbotron-head">
           <div class="container">
-              <h1>Styleguide</h1>
-              <p class="lead">CSS, Components, and Layout details</p>
+              <h1>University Libraries Web Docs</h1>
+              <p class="lead">Writing for the web, Styleguide, Website Components, and Resources.</p>
           </div>
         </div>
         <div class="container">
-            <div class="col-xs-12"> <h1 id="ua-libraries-style-guide">UA Libraries Style Guide</h1>
-<p>This styleguide is intended for web developers (e.g., not &#39;content creators/editors&#39;). It gives basic information about the primary classes/features available.
-For now, this styleguide is being generating using <a href="https://github.com/kss-node/kss-node">kss-node</a>. Unforunately, kss-node doesn&#39;t offer
-all the features we will need, so it will likely be abandoned for another method when we need to development the styleguide for content creators.</p>
-<h2 id="first-steps">First Steps</h2>
-<p>The UA Libraries website CSS is modified from <a href="http://getbootstrap.com/">Bootstrap 3.2.0</a>. The current build of the CSS supports all Bootstrap features,
-but the features will likely be narrowed down to only what is essential. The list below links to Bootstrap topics/features that the UA Libraries CSS will
-likely be features of the finalized UA Libraries Styles.</p>
-<p>Although all of Bootstrap&#39;s capabilities are currently available (subject to change),
-it is strongly recommended you read through the the linked <em>recommended Bootstrap capabilities</em> linked below:</p>
+            <div class="col-xs-12"> <h1 id="overview">Overview</h1>
+<p>University Libraries represents the University of Alabama on an academic and institutional level, not just as a library, but also as a repository, archive, computer lab, and location for students to engage both academically and socially, all in support of the university mission. Consequently, the University Libraries Web Site Style Guide will reflect this usage and will help the Libraries provide students with access to information and resources.</p>
+<p>Web Services’ top priority is to provide users with easy-to-use, accessible, and “findable,” web content. To achieve this, the following style guide presents the Libraries with rules and best practices, regarding site content, writing methods, text usage, and additional website design elements.</p>
+<h2 id="content-strategy">Content Strategy</h2>
+<blockquote>
+<p>In short, your content has to be awesome. It has to be truly helpful. It cannot be about you.
+It has to be about your customers’ wants and needs.</p>
+<p>-- <cite>Forbes Magazine</cite></p>
+</blockquote>
+<p>The User Interface has a strict navigation structure, meaning that new pages or alterations to existing pages will need to fit within this new organizational structure. Pay close attention to link locations, content placement, top-level navigation, and sub-navigation areas.</p>
+<h2 id="what-can-i-put-on-the-website-">What can I put on the website?</h2>
+<p>Anything that is relevant to your department’s services, public information about your department, or information about specialized areas or content types. Website content must not be suitable for a LibGuide or a Blog. We can create LibGuides to promote library resources or services that are specific to an academic research pursuit. Blogs also detail library resources and services, but done so frequently and require multiple postings.</p>
+<h2 id="what-areas-will-i-need-to-talk-to-web-services-about-editing-">What areas will I need to talk to web services about editing?</h2>
+<p>We identified 23 content areas where the design is extensively intermixed with the content; changes to these areas will need web services intervention to ensure the integrity of the design. Web Services have based the design of the site on usability and analytics data, and it is important that the content creator not alter them accidentally or arbitrarily.</p>
+<p>In no way does Web Services claim responsibility or ownership of the content; content creators retain full ownership and responsibility of their page content. Web Services simply assists in the design, the look, and overall feel of how the page presents the content.</p>
 <ul>
-<li>CSS<ul>
-<li><a href="http://getbootstrap.com/css/#overview-container">Containers</a></li>
-<li><a href="http://getbootstrap.com/css/#grid">Grid system</a><ul>
-<li>Read through every sub-topic except &quot;Less mixins and variables&quot;</li>
-</ul>
+<li>Databases (Application)</li>
+<li>Maps, Locations, Hours (Application)</li>
+<li><p>Directory (Application)</p>
 </li>
-<li>Tables<ul>
-<li><a href="http://getbootstrap.com/css/#tables-responsive">Responsive Tables</a></li>
-</ul>
+<li><p>Using the Libraries</p>
 </li>
-<li><a href="http://getbootstrap.com/css/#forms">Forms</a></li>
-<li>Images<ul>
-<li><a href="http://getbootstrap.com/css/#images-responsive">Responsive images</a></li>
-</ul>
+<li><p>Research Tools</p>
 </li>
-<li>Helper classes<ul>
-<li><a href="http://getbootstrap.com/css/#helper-classes-carets">Carets</a></li>
-<li><a href="http://getbootstrap.com/css/#helper-classes-floats">Quick floats</a></li>
-<li><a href="http://getbootstrap.com/css/#helper-classes-screen-readers">Screen reader content</a></li>
+<li>Library Help</li>
+<li>News, Events, and Exhibitions</li>
+<li>About</li>
+<li><p>Libraries &amp; Collections</p>
+</li>
+<li><p>E-Resources (E-Books, E-Journals)</p>
+</li>
+<li><p>Reserves</p>
+</li>
+<li>Interlibrary Borrowing</li>
+<li>Sanford Media Center</li>
+<li>Computers &amp; Software</li>
+<li>How Do I… (Ask A Librarian)</li>
+<li>Alabama Digital Humanities Center</li>
+<li>Print, Copy, Scan</li>
+<li>Circulation Policies (Borrow, Renew, Request)</li>
+<li><p>Equipment</p>
+</li>
+<li><p>Floor Maps</p>
+</li>
+<li><p>Classes, Workshops, Tours</p>
+</li>
+<li>Practice Presentation Rooms</li>
+<li>Social Media Page</li>
 </ul>
+<h2 id="what-are-the-rules-for-adding-additional-content-">What are the rules for adding additional content?</h2>
+<p>Follow the template, use our styles as per the document, or simply let the elements (<p>, <div>, etc.) style automatically as we have intended.</p>
+<h2 id="how-do-i-use-our-styles-and-fonts-how-will-the-elements-appear-and-what-does-each-style-look-like-">How do I use our styles and fonts? How will the elements appear, and what does each style look like?</h2>
+<p>Please see the Style Elements section of this document</p>
+<h2 id="writing-for-the-web">Writing for the Web</h2>
+<p>The University Libraries website is not the final destination for users, but rather a tool to help connect users to the relevant resources and services available at the libraries.  Additionally, research has shown that users interact with website content in a very specific way.Important guidelines for writing for the web:</p>
+<ul>
+<li>Be succinct : write no more than 50% of the text you would have used in a hardcopy publication</li>
+<li>Write for scannability : don&#39;t require users to read long continuous blocks of text
+(<a href="http://www.nngroup.com/articles/be-succinct-writing-for-the-web/">http://www.nngroup.com/articles/be-succinct-writing-for-the-web/</a>)</li>
+</ul>
+<h3 id="additional-resources-">Additional Resources:</h3>
+<ul>
+<li><p>Writing for the Web
+<a href="http://www.nngroup.com/topic/writing-web/">http://www.nngroup.com/topic/writing-web/</a></p>
+</li>
+<li><p>Kill the Welcome Mat
+<a href="http://www.nngroup.com/articles/blah-blah-text-keep-cut-or-kill/">http://www.nngroup.com/articles/blah-blah-text-keep-cut-or-kill/</a></p>
+</li>
+<li><p>10 Tips for Good Web Writing
+<a href="http://webdesign.about.com/od/writing/a/aa031405.htm">http://webdesign.about.com/od/writing/a/aa031405.htm</a></p>
 </li>
 </ul>
-</li>
-<li>Components<ul>
-<li><a href="http://getbootstrap.com/components/#dropdowns">Dropdowns</a></li>
-<li><a href="http://getbootstrap.com/components/#btn-groups">Button groups</a></li>
-<li><a href="http://getbootstrap.com/components/#btn-dropdowns">Button dropdowns</a></li>
-<li><a href="http://getbootstrap.com/components/#input-groups">Input groups</a></li>
-<li><a href="http://getbootstrap.com/components/#nav">Navs</a></li>
-<li><a href="http://getbootstrap.com/components/#navbar">Navbar</a></li>
-<li><a href="http://getbootstrap.com/components/#labels">Labels</a></li>
-<li><a href="http://getbootstrap.com/components/#thumbnails">Thumbnails</a></li>
-<li>Alerts<ul>
-<li><a href="http://getbootstrap.com/components/#alerts-dismissible">Dissmissable alerts</a></li>
-<li><a href="http://getbootstrap.com/components/#alerts-links">Links in alerts</a></li>
+<h3 id="content">Content</h3>
+<ul>
+<li>Keep content relevant to topic and goal; your writing should have a goal.</li>
+<li>When writing, think of an inverted pyramid - get to the point in the first paragraph, then expand upon it.</li>
+<li>One idea per paragraph.</li>
+<li>Web pages need to be concise and to-the-point; short, meaty paragraphs are better than long rambling ones.</li>
+<li>Use action words.</li>
+<li>Tell your readers what to do and avoid the passive voice. Keep the flow of your pages moving.</li>
 </ul>
-</li>
-<li><a href="http://getbootstrap.com/components/#media">Media object</a></li>
+<p><img src="../assets/img/pages-flow.jpg" alt="Alt text">
+-- Lynda Felder, Peachpit.com</p>
+<h3 id="format">Format</h3>
+<ul>
+<li>Try to use lists instead of paragraphs - lists are easier to scan than paragraphs.</li>
+<li>Try to limit list items to 7 words: studies have shown that people can only reliably remember 7-10 things at a time. More than 7 is occasionally acceptable, depending on context.</li>
+<li>Sentences should be as concise as you can make them. Use only the words you need to convey essential information.</li>
+<li>Include internal sub-headings: sub-headings make the text more scannable. Your readers will move to the section of the document that is most useful for them, and internal cues make it easier for them to achieve this.</li>
+<li>Make your links part of the copy: links are another way Web readers scan pages. They stand out from normal text, and provide additional cues as to what the page is about.</li>
 </ul>
-</li>
+<h3 id="always">Always</h3>
+<ul>
+<li>Proofread your work - typos and spelling errors will send people away from your pages. Make sure you proofread everything you post to the Web.</li>
 </ul>
-<h2 id="using-the-css">Using the CSS</h2>
-<p>For development use the <a href="https://rawgit.com/">RawGit</a> service for the header include. You can change the link to your own fork as well.</p>
-<p><strong>Note:</strong> Only use this link for low-traffic dev or demo sites.</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://rawgit.com/ualibweb/ualib-styles/gh-pages/dist/ualib-styles.min.css&quot;&gt;
-</code></pre><h3 id="issues-and-feature-requests">Issues and feature requests</h3>
-<p>Use github&#39;s <a href="https://github.com/ualibweb/ualib-styles/issues">issues system</a> to report problems or make feature requests. To do this, you must first create a github account. Afterwards, let me know you account name and I&#39;ll add you as a contributor.</p>
-<hr>
-<h2 id="forking-installing-and-building-the-ua-libraries-styles-and-styleguide">Forking, installing, and building the UA Libraries styles and styleguide</h2>
-<h3 id="requirements">Requirements</h3>
-<p>You must have the following software install on your computer to build the CSS and Styleguide. Grunt and Bower both require Node.js, so install Node first.</p>
-<ol>
-<li><a href="http://nodejs.org/">Node.js</a><ul>
-<li>Go to their <a href="http://nodejs.org/download/">downloads page</a> and install the appropriate package</li>
-</ul>
-</li>
-<li><a href="http://gruntjs.com/">Grunt.js</a><ul>
-<li><a href="http://gruntjs.com/getting-started#installing-the-cli">See here</a> for installation instructions</li>
-</ul>
-</li>
-<li><a href="http://bower.io/">Bower</a><ul>
-<li><a href="http://bower.io/#install-bower">See here</a> for installation</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="forking-repo-and-installing-dependencies">Forking repo and Installing dependencies</h3>
-<ol>
-<li>Create you own fork of the <a href="https://github.com/ualibweb/ualib-styles">ualibweb/ualib-styles</a> repo. <a href="https://help.github.com/articles/fork-a-repo/">See here</a> for instructions on forking a github repo.<ul>
-<li>The default branch for this repo is <code>gh-pages</code>. Any <a href="https://help.github.com/articles/using-pull-requests/">pull requests</a> will be merged with this branch.</li>
-</ul>
-</li>
-<li>Run <code>npm install -g kss</code> in the command line to install <code>kss-node</code> globally.</li>
-<li>Run <code>npm install</code> to install dependencies for <code>grunt</code> (ensure you&#39;re in the same folder as the <code>package.json</code> file).</li>
-<li>Run <code>bower install</code> in the command line (ensure you&#39;re in the same folder as the <code>bower.json</code> file).</li>
-</ol>
-<hr>
-<h3 id="build-everything-css-and-styleguide-">Build everything (CSS and Styleguide)</h3>
-<ol>
-<li>Run <code>grunt</code> or <code>grunt default</code></li>
-</ol>
-<h3 id="build-css-only">Build CSS only</h3>
-<ol>
-<li>Run <code>grunt css</code></li>
-</ol>
-<hr>
-<h4 id="the-final-css-file-s-are-build-to">The final CSS file(s) are build to</h4>
-<pre><code>dist/css/
-</code></pre><h4 id="the-styleguide-is-build-to">The Styleguide is build to</h4>
-<pre><code>styleguide/
-</code></pre></div>
+</div>
         </div>
     </main>
   </div>
@@ -206,7 +302,55 @@ it is strongly recommended you read through the the linked <em>recommended Boots
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+<script src="../assets/js/vendor.js"></script>
+<script src="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components-templates.js"></script>
+<script src="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script>
+  angular.module('styleguide', ['ngAnimate', 'mgcrea.ngStrap', 'ualib.ui'])
 
+          /*.run(['$rootScope', function($rootScope){
+            $rootScope.$on('duScrollspy:becameActive', function(event, elm){
+              /*console.log({
+                ev: event,
+                element: elm
+              })*
+            })
+          }])*/
+
+          .directive('fixieMenu', ['$window', function($window){
+            return {
+              restrict: 'AC',
+              link: function(scope, elm, attrs){
+                var width = elm[0].offsetWidth;
+                var fixed = false;
+                var fixieClass = 'nav-fixed';
+                var offset = 350;
+                angular.element($window).bind('scroll', fixieScroll);
+                function fixieScroll(ev){
+                  if (this.pageYOffset > offset) {
+                    if (!fixed){
+                      console.log(width);
+                      elm.addClass(fixieClass);
+                      elm.css('width', width+'px');
+                      fixed = true;
+                    }
+                  }
+                  else {
+                    if (fixed){
+                      elm.removeClass(fixieClass);
+                      elm.css('width', 'auto');
+                      fixed = false;
+                    }
+                  }
+                  scope.$apply();
+                }
+                scope.$on('$destroy', function(){
+                  angular.element($window).unbind('scroll', fixieScroll);
+                });
+              }
+            }
+          }]);
+</script>
 </body>
 </html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en" ng-app="styleguide"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en" ng-app="styleguide"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>UA Libraries Styleguide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
+  <link href="../assets/css/vendor.css" rel="stylesheet">
+  <link rel="stylesheet" href="public/ualib-styleguide.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.css" rel="stylesheet">
+  
+</head>
+<body>
+<header id="header-nav">
+  <nav class="navbar navbar-static-top navbar-mega" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html" >UA Lib Web Docs</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle">Components</a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content">
+                  <div class="row">
+                     <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-components.html#components-dropdowns">
+                            <span class="fa fa-caret-square-o-down"></span>
+                          <h4>Dropdowns</h4>
+                            <p>Dropdowns for navigation and forms</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-components.html#components-megamenu">
+                            <span class="fa th-list"></span>
+                          <h4>Mega Menu</h4>
+                            <p>Megamenu for main website navigation</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-components.html#components-pages_submenus">
+                            <span class="fa fs-columns"></span>
+                          <h4>Pages &amp; Submenus</h4>
+                            <p>Automatically generate submenus using the Page component</p>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </li>
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle">Style</a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content">
+                  <div class="row">
+                     <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-buttons">
+                            <span class="fa fa-hand-o-up"></span>
+                          <h4>Buttons</h4>
+                            <p>Types of buttons available to use on the website</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-color">
+                            <span class="fa fa-eyedropper"></span>
+                          <h4>Colors</h4>
+                            <p>Color scheme for the website and how to use them</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-icons">
+                            <span class="fa fa-info-circle"></span>
+                          <h4>Icons</h4>
+                            <p>Available icons and how to use them</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-images">
+                            <span class="fa fa-image"></span>
+                          <h4>Images</h4>
+                            <p>Using images in a responsive way</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-links">
+                            <span class="fa fa-link"></span>
+                          <h4>Links</h4>
+                            <p>Link types and their decoration</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-tables">
+                            <span class="fa fa-tables"></span>
+                          <h4>Tables</h4>
+                            <p>Types of tables and where to use them</p>
+                        </a>
+                      </li>
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-style.html#style-typography">
+                            <span class="fa fa-font"></span>
+                          <h4>Typography</h4>
+                            <p>Fonts used for body, heading, and other text elements</p>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </li>
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle">Layout</a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <div class="yamm-content">
+                  <div class="row">
+                     <ul class="list-unstyled">
+                      <li class="col-xs-3 menu-col">
+                        <a href="section-layout.html#layout-grid">
+                            <span class="fa fa-th"></span>
+                          <h4>The Grid</h4>
+                            <p>Make responsive layouts using the grid</p>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://github.com/ualibweb/ualibweb.github.io" target="_new"><span class="fa fa-github"></span> Github</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quick Links</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://getbootstrap.com/"><span class="fa fa-fw fa-border">B</span> Bootstrap Docs</a></li>
+              <li><a href="http://fortawesome.github.io/Font-Awesome/"><span class="fa fa-fw fa-flag"></span> Font Awesome</a></li>
+              <li><a href="https://www.google.com/fonts"><span class="fa fa-fw fa-paint-brush"></span> Google Fonts</a></li>
+              <li><a href="http://webaim.org/resources/contrastchecker/"><span class="fa fa-fw fa-adjust"></span> WCAG AA Contrast Checker</a></li>
+              <li><a href="https://color.adobe.com"><span class="fa fa-fw fa-eyedropper"></span> Adobe Color CC</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="content">
+    <main class="main" role="main">
+        <div class="jumbotron jumbotron-head">
+          <div class="container">
+                <h1>Components</h1>
+
+                  <p>weight 1</p>
+
+          </div>
+        </div>
+        <div class="container">
+            <div class="col-sm-2 col-sm-push-10">
+              <nav class="fixie-menu navbar-styleguide">
+                <ul class="nav nav-submenu">
+                      <li data-target="#components-dropdowns" bs-scrollspy>
+                        <a class="menu-item" href="#components-dropdowns">
+                          Dropdowns
+                        </a>
+                        <ul class="nav ">
+                        </ul>
+                      </li>
+                      <li data-target="#components-megamenu" bs-scrollspy>
+                        <a class="menu-item" href="#components-megamenu">
+                          Mega Menu
+                        </a>
+                        <ul class="nav ">
+                        </ul>
+                      </li>
+                      <li data-target="#components-pages_submenus" bs-scrollspy>
+                        <a class="menu-item" href="#components-pages_submenus">
+                          Pages &amp; Submenus
+                        </a>
+                        <ul class="nav ">
+                        </ul>
+                      </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-10 col-sm-pull-2">
+                  <div class="section" id="components-dropdowns">
+                    <h2>Dropdowns</h2>
+
+                      <p><mark>TODO:</mark> dropdown description, etc.</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                               <div class="dropdown">
+ <button class="btn btn-default dropdown-toggle"  type="button">
+   Dropdown
+ </button>
+ <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+ </ul>
+ </div>
+
+                          </div>
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html"> &lt;div class=&quot;dropdown&quot;&gt;
+ &lt;button class=&quot;btn btn-default dropdown-toggle&quot;  type=&quot;button&quot;&gt;
+   Dropdown
+ &lt;/button&gt;
+ &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot; aria-labelledby=&quot;dropdownMenu1&quot;&gt;
+   &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+   &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+   &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+   &lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;/div&gt;</code>
+                            </pre>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="section" id="components-megamenu">
+                    <h2>Mega Menu</h2>
+
+                      <p>The mega menu should only appear once, as the website&#39;s main header navigation. The mega menu dropdowns can
+support almost any of the website&#39;s components: <mark>TODO:</mark> list components appropriate for mega menu. Finish responsive support.</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                               <nav class="navbar navbar-static-top navbar-mega" role="navigation">
+   <div class="container-fluid">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="fa fa-bars"></span>
+       </button>
+       <a class="navbar-brand" href="#">
+         <img src="holder.js/110x75/text:Logo" class="img-responsive" alt="University of Alabama Libraries"/>
+       </a>
+     </div>
+     <div class="collapse navbar-collapse">
+       <ul class="nav navbar-nav">
+         <li>
+           <a href="#">Link</a>
+         </li>
+         <li class="dropdown yamm-fw">
+           <a href="#" class="dropdown-toggle">Dropdown</a>
+           <ul class="dropdown-menu">
+             <li>
+               <div class="yamm-content">
+                 <div class="row">
+                   <div class="col-xs-4">
+                     <a href="#">
+                       <span class="fa fa-compass"></span>
+                       <h4>Action</h4>
+                       <p>An action that does things very action-ably</p>
+                     </a>
+                   </div>
+                   <div class="col-xs-4">
+                     <a href="#">
+                       <span class="fa fa-flask"></span>
+                       <h4>Another Action</h4>
+                       <p>Another action that also takes action</p>
+                     </a>
+                   </div>
+                   <div class="col-xs-4">
+                     <a href="#">
+                       <span class="fa fa-"></span>
+                       <h4>Links So Gridly</h4>
+                       <p>Man, all these links & icons work well in a grid</p>
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </li>
+           </ul>
+         </li>
+       </ul>
+       <ul class="nav navbar-nav navbar-left">
+         <li>
+           <a href="#">Left Aligned Navbar</a>
+         </li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li>
+           <a href="#">Link</a>
+         </li>
+         <li class="dropdown yamm-fw">
+           <a href="#" class="dropdown-toggle">Dropdown</a>
+           <ul class="dropdown-menu">
+             <li>
+               <div class="yamm-content">
+                 <div class="row">
+                   <div class="col-sm-4">
+                     <div class="mm-heading">
+                       <span class="fa fa-desktop"></span>
+                       <h4>List Should Never Stack</h4>
+                     </div>
+                     <ul>
+                       <li><a href="#">Action</a></li>
+                       <li><a href="#">Another action</a></li>
+                     </ul>
+                   </div>
+                   <div class="col-sm-4">
+                     <div class="mm-heading">
+                       <span class="fa fa-puzzle-piece"></span>
+                       <h4>They Should Split By Columns</h4>
+                     </div>
+                     <ul>
+                       <li><a href="#">Separated</a></li>
+                       <li><a href="#">Link</a></li>
+                       <li><a href="#">List</a></li>
+                     </ul>
+                   </div>
+                   <div class="col-sm-4">
+                     <div class="mm-heading">
+                       <span class="fa fa-spoon"></span>
+                       <h4>Like This!</h4>
+                     </div>
+                     <ul>
+                       <li><a href="#">Another</a></li>
+                       <li><a href="#">Separated</a></li>
+                       <li><a href="#">Link</a></li>
+                       <li><a href="#">List</a></li>
+                     </ul>
+                   </div>
+                 </div>
+               </div>
+             </li>
+           </ul>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </nav>
+
+                          </div>
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html"> &lt;nav class=&quot;navbar navbar-static-top navbar-mega&quot; role=&quot;navigation&quot;&gt;
+   &lt;div class=&quot;container-fluid&quot;&gt;
+     &lt;div class=&quot;navbar-header&quot;&gt;
+       &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot;&gt;
+         &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+         &lt;span class=&quot;fa fa-bars&quot;&gt;&lt;/span&gt;
+       &lt;/button&gt;
+       &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;
+         &lt;img src=&quot;holder.js/110x75/text:Logo&quot; class=&quot;img-responsive&quot; alt=&quot;University of Alabama Libraries&quot;/&gt;
+       &lt;/a&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;collapse navbar-collapse&quot;&gt;
+       &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+         &lt;li&gt;
+           &lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;dropdown yamm-fw&quot;&gt;
+           &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot;&gt;Dropdown&lt;/a&gt;
+           &lt;ul class=&quot;dropdown-menu&quot;&gt;
+             &lt;li&gt;
+               &lt;div class=&quot;yamm-content&quot;&gt;
+                 &lt;div class=&quot;row&quot;&gt;
+                   &lt;div class=&quot;col-xs-4&quot;&gt;
+                     &lt;a href=&quot;#&quot;&gt;
+                       &lt;span class=&quot;fa fa-compass&quot;&gt;&lt;/span&gt;
+                       &lt;h4&gt;Action&lt;/h4&gt;
+                       &lt;p&gt;An action that does things very action-ably&lt;/p&gt;
+                     &lt;/a&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;col-xs-4&quot;&gt;
+                     &lt;a href=&quot;#&quot;&gt;
+                       &lt;span class=&quot;fa fa-flask&quot;&gt;&lt;/span&gt;
+                       &lt;h4&gt;Another Action&lt;/h4&gt;
+                       &lt;p&gt;Another action that also takes action&lt;/p&gt;
+                     &lt;/a&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;col-xs-4&quot;&gt;
+                     &lt;a href=&quot;#&quot;&gt;
+                       &lt;span class=&quot;fa fa-&quot;&gt;&lt;/span&gt;
+                       &lt;h4&gt;Links So Gridly&lt;/h4&gt;
+                       &lt;p&gt;Man, all these links &amp; icons work well in a grid&lt;/p&gt;
+                     &lt;/a&gt;
+                   &lt;/div&gt;
+                 &lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/li&gt;
+           &lt;/ul&gt;
+         &lt;/li&gt;
+       &lt;/ul&gt;
+       &lt;ul class=&quot;nav navbar-nav navbar-left&quot;&gt;
+         &lt;li&gt;
+           &lt;a href=&quot;#&quot;&gt;Left Aligned Navbar&lt;/a&gt;
+         &lt;/li&gt;
+       &lt;/ul&gt;
+       &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+         &lt;li&gt;
+           &lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;dropdown yamm-fw&quot;&gt;
+           &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot;&gt;Dropdown&lt;/a&gt;
+           &lt;ul class=&quot;dropdown-menu&quot;&gt;
+             &lt;li&gt;
+               &lt;div class=&quot;yamm-content&quot;&gt;
+                 &lt;div class=&quot;row&quot;&gt;
+                   &lt;div class=&quot;col-sm-4&quot;&gt;
+                     &lt;div class=&quot;mm-heading&quot;&gt;
+                       &lt;span class=&quot;fa fa-desktop&quot;&gt;&lt;/span&gt;
+                       &lt;h4&gt;List Should Never Stack&lt;/h4&gt;
+                     &lt;/div&gt;
+                     &lt;ul&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                     &lt;/ul&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;col-sm-4&quot;&gt;
+                     &lt;div class=&quot;mm-heading&quot;&gt;
+                       &lt;span class=&quot;fa fa-puzzle-piece&quot;&gt;&lt;/span&gt;
+                       &lt;h4&gt;They Should Split By Columns&lt;/h4&gt;
+                     &lt;/div&gt;
+                     &lt;ul&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated&lt;/a&gt;&lt;/li&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;List&lt;/a&gt;&lt;/li&gt;
+                     &lt;/ul&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;col-sm-4&quot;&gt;
+                     &lt;div class=&quot;mm-heading&quot;&gt;
+                       &lt;span class=&quot;fa fa-spoon&quot;&gt;&lt;/span&gt;
+                       &lt;h4&gt;Like This!&lt;/h4&gt;
+                     &lt;/div&gt;
+                     &lt;ul&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another&lt;/a&gt;&lt;/li&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated&lt;/a&gt;&lt;/li&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+                       &lt;li&gt;&lt;a href=&quot;#&quot;&gt;List&lt;/a&gt;&lt;/li&gt;
+                     &lt;/ul&gt;
+                   &lt;/div&gt;
+                 &lt;/div&gt;
+               &lt;/div&gt;
+             &lt;/li&gt;
+           &lt;/ul&gt;
+         &lt;/li&gt;
+       &lt;/ul&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/nav&gt;</code>
+                            </pre>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="section" id="components-pages_submenus">
+                    <h2>Pages &amp; Submenus</h2>
+
+                      <p>Submenus are automatically generated by useing the Page component.
+This allows content creators to focus on content without having to worry about navigation.
+Use the <code>&lt;page&gt;</code> tag to start a &quot;menued&quot; page, then add <code>&lt;page-section&gt;</code> tags for each section.</p>
+<p>Menu items are assigned using the <code>&lt;h2&gt;</code> heading for each page section. If you want the menu text to
+be different from a page section&#39;s heading, use the <code>title</code> attribute on the <code>&lt;page-section&gt;</code> element.</p>
+<p><mark>TODO:</mark> Shift this doc section from KSS to a proper doc system for the UI Components Repo</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                               <page>
+   <page-section>
+     <h2>Section 1</h2>
+     <p>...content...</p>
+   </page-section>
+   <page-section title="Section 2">
+     <h2>Section 2 heading it too long for the menu</h2>
+     <p>...</p>
+   </page-section>
+ </page>
+
+                          </div>
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html"> &lt;page&gt;
+   &lt;page-section&gt;
+     &lt;h2&gt;Section 1&lt;/h2&gt;
+     &lt;p&gt;...content...&lt;/p&gt;
+   &lt;/page-section&gt;
+   &lt;page-section title=&quot;Section 2&quot;&gt;
+     &lt;h2&gt;Section 2 heading it too long for the menu&lt;/h2&gt;
+     &lt;p&gt;...&lt;/p&gt;
+   &lt;/page-section&gt;
+ &lt;/page&gt;</code>
+                            </pre>
+                          </div>
+                        </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+<script src="../assets/js/vendor.js"></script>
+<script src="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components-templates.js"></script>
+<script src="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  angular.module('styleguide', ['ngAnimate', 'mgcrea.ngStrap', 'ualib.ui'])
+
+          /*.run(['$rootScope', function($rootScope){
+            $rootScope.$on('duScrollspy:becameActive', function(event, elm){
+              /*console.log({
+                ev: event,
+                element: elm
+              })*
+            })
+          }])*/
+
+          .directive('fixieMenu', ['$window', function($window){
+            return {
+              restrict: 'AC',
+              link: function(scope, elm, attrs){
+                var width = elm[0].offsetWidth;
+                var fixed = false;
+                var fixieClass = 'nav-fixed';
+                var offset = 350;
+                angular.element($window).bind('scroll', fixieScroll);
+                function fixieScroll(ev){
+                  if (this.pageYOffset > offset) {
+                    if (!fixed){
+                      console.log(width);
+                      elm.addClass(fixieClass);
+                      elm.css('width', width+'px');
+                      fixed = true;
+                    }
+                  }
+                  else {
+                    if (fixed){
+                      elm.removeClass(fixieClass);
+                      elm.css('width', 'auto');
+                      fixed = false;
+                    }
+                  }
+                  scope.$apply();
+                }
+                scope.$on('$destroy', function(){
+                  angular.element($window).unbind('scroll', fixieScroll);
+                });
+              }
+            }
+          }]);
+</script>
+</body>
+</html>
