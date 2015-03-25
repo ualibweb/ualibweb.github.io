@@ -45,11 +45,10 @@
               <li>
                 <div class="yamm-content">
                   <div class="row">
-                     <ul class="list-unstyled">
                        {{#eachSection reference}}
                        {{#ifDepth 2}}
-                      <li class="col-xs-3 menu-col">
-                        <a href="section-{{../../referenceURI}}.html#{{scrollSpyId referenceURI}}">
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-{{../../referenceURI}}.html#{{scrollSpyId referenceURI}}">
                           {{#if icon}}
                             <span class="fa {{icon}}"></span>
                           {{/if}}
@@ -58,11 +57,9 @@
                             <p>{{menublurb}}</p>
                           {{/if}}
                         </a>
-                      </li>
+                      </div>
                        {{/ifDepth}}
                       {{/eachSection}}
-                    </ul>
-
                   </div>
                 </div>
               </li>
@@ -91,9 +88,9 @@
   </nav>
 </header>
 
-<div class="wrap">
-  <div class="content">
-    <main class="main" role="main">
+<div class="wrap" role="document">
+    <div class="content row">
+        <main class="main" role="main">
         <div class="jumbotron jumbotron-head">
           <div class="container">
             {{#if homepage}}
