@@ -194,8 +194,9 @@ table .swatch-color{
   border: none !important;
 }
 
-/* Primary Colors */
+/* Swatch Color Mixin */
 
+/* Primary Colors */
 .swatch-color-link{
   background-color: @link-color;
 }
@@ -213,21 +214,6 @@ table .swatch-color{
   content: "@{brand-primary}";
 }
 
-.swatch-color-gray-lighter{
-  background-color: @gray-lighter;
-}
-.table .swatch-color-gray-lighter:after{
-  content: "@{gray-lighter}";
-}
-
-.swatch-color-gray-dark{
-  background-color: @gray-dark;
-}
-.table .swatch-color-gray-dark:after{
-  color: #f6f6f6;
-  content: "@{gray-dark}";
-}
-
 .swatch-color-body-bg{
   background-color: @body-bg;
 }
@@ -235,7 +221,8 @@ table .swatch-color{
   content: "@{body-bg}";
 }
 
-/* Secondary Colors *
+
+/* Secondary Color Swatches */
 
 .swatch-color-orange{
   background-color: @orange;
@@ -253,6 +240,32 @@ table .swatch-color{
   content: "@{dark-blue}";
 }
 
+.swatch-color-green{
+  background-color: @green;
+}
+.table .swatch-color-green:after{
+  color: #f6f6f6;
+  content: "@{green}";
+}
+
+/* Gray Value Swatches */
+
+.swatch-color-gray-darker{
+  background-color: @gray-darker;
+}
+.table .swatch-color-gray-darker:after{
+  color: #f6f6f6;
+  content: "@{gray-darker}";
+}
+
+.swatch-color-gray-dark{
+  background-color: @gray-dark;
+}
+.table .swatch-color-gray-dark:after{
+  color: #f6f6f6;
+  content: "@{gray-dark}";
+}
+
 .swatch-color-gray{
   background-color: @gray;
 }
@@ -261,13 +274,20 @@ table .swatch-color{
   content: "@{gray}";
 }
 
-.swatch-color-green{
-  background-color: @green;
+.swatch-color-gray-light{
+  background-color: @gray-light;
 }
-.table .swatch-color-green:after{
-  color: #f6f6f6;
-  content: "@{green}";
-}*/
+.table .swatch-color-gray-light:after{
+  content: "@{gray-light}";
+}
+
+.swatch-color-gray-lighter{
+  background-color: @gray-lighter;
+}
+.table .swatch-color-gray-lighter:after{
+  content: "@{gray-lighter}";
+}
+
 
 /* Footer Styles */
 footer{

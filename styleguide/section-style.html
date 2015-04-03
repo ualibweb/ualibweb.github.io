@@ -45,13 +45,6 @@
                 <div class="yamm-content">
                   <div class="row">
                       <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-style.html#style-buttons">
-                            <span class="fa fa-hand-o-up"></span>
-                          <h4>Buttons</h4>
-                            <p>Types of buttons available to use on the website</p>
-                        </a>
-                      </div>
-                      <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-style.html#style-color">
                             <span class="fa fa-eyedropper"></span>
                           <h4>Colors</h4>
@@ -66,10 +59,17 @@
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-style.html#style-images">
-                            <span class="fa fa-image"></span>
-                          <h4>Images</h4>
-                            <p>Using images in a responsive way</p>
+                        <a class="service-card" href="section-style.html#style-typography">
+                            <span class="fa fa-font"></span>
+                          <h4>Typography</h4>
+                            <p>Fonts used for body, heading, and other text elements</p>
+                        </a>
+                      </div>
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-style.html#style-buttons">
+                            <span class="fa fa-hand-o-up"></span>
+                          <h4>Buttons</h4>
+                            <p>Types of buttons available to use on the website</p>
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
@@ -87,10 +87,17 @@
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-style.html#style-typography">
-                            <span class="fa fa-font"></span>
-                          <h4>Typography</h4>
-                            <p>Fonts used for body, heading, and other text elements</p>
+                        <a class="service-card" href="section-style.html#style-forms">
+                            <span class="fa fa-paste"></span>
+                          <h4>Forms</h4>
+                            <p>Form options</p>
+                        </a>
+                      </div>
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-style.html#style-images">
+                            <span class="fa fa-image"></span>
+                          <h4>Images</h4>
+                            <p>Using images in a responsive way</p>
                         </a>
                       </div>
                   </div>
@@ -199,6 +206,52 @@
             <div class="col-sm-2 col-sm-push-10">
               <nav class="fixie-menu navbar-styleguide">
                 <ul class="nav nav-submenu">
+                      <li data-target="#style-color" bs-scrollspy>
+                        <a class="menu-item" href="#style-color">
+                          Colors
+                        </a>
+                        <ul class="nav ">
+                              <li data-target="#style-color-primary" bs-scrollspy>
+                                <a class="submenu-item" href="#style-color-primary">
+                                  Primary Colors
+                                </a>
+                              </li>
+                              <li data-target="#style-color-secondary" bs-scrollspy>
+                                <a class="submenu-item" href="#style-color-secondary">
+                                  Secondary Colors
+                                </a>
+                              </li>
+                              <li data-target="#style-color-gray_values" bs-scrollspy>
+                                <a class="submenu-item" href="#style-color-gray_values">
+                                  Gray Values
+                                </a>
+                              </li>
+                        </ul>
+                      </li>
+                      <li data-target="#style-icons" bs-scrollspy>
+                        <a class="menu-item" href="#style-icons">
+                          Icons
+                        </a>
+                        <ul class="nav ">
+                        </ul>
+                      </li>
+                      <li data-target="#style-typography" bs-scrollspy>
+                        <a class="menu-item" href="#style-typography">
+                          Typography
+                        </a>
+                        <ul class="nav ">
+                              <li data-target="#style-typography-body" bs-scrollspy>
+                                <a class="submenu-item" href="#style-typography-body">
+                                  Body Text
+                                </a>
+                              </li>
+                              <li data-target="#style-typography-headings" bs-scrollspy>
+                                <a class="submenu-item" href="#style-typography-headings">
+                                  Headings
+                                </a>
+                              </li>
+                        </ul>
+                      </li>
                       <li data-target="#style-buttons" bs-scrollspy>
                         <a class="menu-item" href="#style-buttons">
                           Buttons
@@ -214,32 +267,11 @@
                                   Button Types
                                 </a>
                               </li>
-                        </ul>
-                      </li>
-                      <li data-target="#style-color" bs-scrollspy>
-                        <a class="menu-item" href="#style-color">
-                          Colors
-                        </a>
-                        <ul class="nav ">
-                              <li data-target="#style-color-primary" bs-scrollspy>
-                                <a class="submenu-item" href="#style-color-primary">
-                                  Primary Colors
+                              <li data-target="#style-buttons-modifiers" bs-scrollspy>
+                                <a class="submenu-item" href="#style-buttons-modifiers">
+                                  Button modifiers
                                 </a>
                               </li>
-                        </ul>
-                      </li>
-                      <li data-target="#style-icons" bs-scrollspy>
-                        <a class="menu-item" href="#style-icons">
-                          Icons
-                        </a>
-                        <ul class="nav ">
-                        </ul>
-                      </li>
-                      <li data-target="#style-images" bs-scrollspy>
-                        <a class="menu-item" href="#style-images">
-                          Images
-                        </a>
-                        <ul class="nav ">
                         </ul>
                       </li>
                       <li data-target="#style-links" bs-scrollspy>
@@ -266,31 +298,218 @@
                               </li>
                         </ul>
                       </li>
-                      <li data-target="#style-typography" bs-scrollspy>
-                        <a class="menu-item" href="#style-typography">
-                          Typography
+                      <li data-target="#style-forms" bs-scrollspy>
+                        <a class="menu-item" href="#style-forms">
+                          Forms
                         </a>
                         <ul class="nav ">
-                              <li data-target="#style-typography-body" bs-scrollspy>
-                                <a class="submenu-item" href="#style-typography-body">
-                                  Body Text
+                              <li data-target="#style-forms-inline" bs-scrollspy>
+                                <a class="submenu-item" href="#style-forms-inline">
+                                  Inline form
                                 </a>
                               </li>
-                              <li data-target="#style-typography-headings" bs-scrollspy>
-                                <a class="submenu-item" href="#style-typography-headings">
-                                  Headings
+                              <li data-target="#style-forms-horizontal" bs-scrollspy>
+                                <a class="submenu-item" href="#style-forms-horizontal">
+                                  Horizontal form
                                 </a>
                               </li>
+                        </ul>
+                      </li>
+                      <li data-target="#style-images" bs-scrollspy>
+                        <a class="menu-item" href="#style-images">
+                          Images
+                        </a>
+                        <ul class="nav ">
                         </ul>
                       </li>
                 </ul>
               </nav>
             </div>
             <div class="col-sm-10 col-sm-pull-2">
+                  <div class="section" id="style-color">
+                    <h2>Colors</h2>
+
+                      <p>Always try to stick to the <a href="#style-color-primary">Primary Colors</a>. Only use <a href="#style-color-secondary">Secondary Colors</a>
+for slight accents or highlights. <a href="#1.2">Secondary Colors</a> should only be dominant
+when used in a child/sub theme.</p>
+<blockquote>
+<p>When using colors as background, check that the contrast between text and background colors pass, at minimum, the WCAG AA usability standards by using <a href="http://webaim.org/resources/contrastchecker/">this contrast checker</a> or similar tools.</p>
+</blockquote>
+
+
+                  </div>
+                  <div class="section" id="style-color-primary">
+                    <h3>Primary Colors</h3>
+
+                      <p>Try to use these colors for everything. Only use these colors where deemed appropriate
+via this styleguide.</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              <table class="table swatch">
+    <tbody>
+        <tr>
+            <td class="swatch-color swatch-color-link"></td>
+            <td class="swatch-color swatch-color-gray-lighter"></td>
+            <td class="swatch-color swatch-color-body-bg"></td>
+            <td class="swatch-color swatch-color-gray-dark"></td>
+            <td class="swatch-color swatch-color-primary"></td>
+        </tr>
+    </tbody>
+</table>
+
+                          </div>
+                        </div>
+                  </div>
+                  <div class="section" id="style-color-secondary">
+                    <h3>Secondary Colors</h3>
+
+                      <p>Use these colors sparingly, as accents or contrasts. It is best to use these colors on thin or line elements and properties such as <code>borders</code>, <code>text</code>, etc.,
+instead of block/thick elements such <code>background-color</code>, <code>nav buttons</code>, etc.</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              <table class="table swatch">
+  <tbody>
+  <tr>
+    <td class="swatch-color swatch-color-dark-blue"></td>
+    <td class="swatch-color swatch-color-green"></td>
+    <td class="swatch-color swatch-color-orange"></td>
+  </tr>
+  </tbody>
+</table>
+
+                          </div>
+                        </div>
+                  </div>
+                  <div class="section" id="style-color-gray_values">
+                    <h3>Gray Values</h3>
+
+                      <p>Use these to aid in contrast between elements or sections.</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              <table class="table swatch">
+  <tbody>
+  <tr>
+    <td class="swatch-color swatch-color-gray-darker"></td>
+    <td class="swatch-color swatch-color-gray-dark"></td>
+    <td class="swatch-color swatch-color-gray"></td>
+    <td class="swatch-color swatch-color-gray-light"></td>
+    <td class="swatch-color swatch-color-gray-lighter"></td>
+  </tr>
+  </tbody>
+</table>
+
+                          </div>
+                        </div>
+                  </div>
+                  <div class="section" id="style-icons">
+                    <h2>Icons</h2>
+
+                      <p>Icons are provided via <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>.</p>
+<ul>
+<li>All icon classes must be paired with the <code>fa</code> class. (e.g., the <a href="http://fortawesome.github.io/Font-Awesome/icon/life-ring/">fa-life-ring</a> icon would require <code>class=&quot;fa fa-life-ring&quot;</code>)</li>
+<li>Always use <code>span</code> instead of <code>i</code> element. Even though the Font Awesome docs use <code>i</code>, we want to avoid repurposing existing HTML elements for WCAG 2.0AA compliance.</li>
+<li>Use sparingly in sub menus.</li>
+<li>Read through Font Awesome&#39;s <a href="http://fortawesome.github.io/Font-Awesome/examples/">example docs</a> to see what tricks this icon library offers.</li>
+</ul>
+<p>Users tend to skim through context, looking for subtle clues and markers to determine the intent of a link or
+block of text. <strong>Icons</strong> are a great way to make &quot;skimmable&quot; websites. However, to ensure &quot;skimmability&quot;, each icon <strong>must</strong>
+be used in a unique context that defines what that icon means on the website.</p>
+<blockquote>
+<p>Each icon should only represent one thing or idea, otherwise the user may feel disoriented or frustrated when they get an unexpected outcome.</p>
+</blockquote>
+<p><mark>TODO:</mark> Write out each icon&#39;s service or concept definition</p>
+
+
+                  </div>
+                  <div class="section" id="style-typography">
+                    <h2>Typography</h2>
+
+                      <p>Use and availability of fonts</p>
+
+
+                  </div>
+                  <div class="section" id="style-typography-body">
+                    <h3>Body Text</h3>
+
+                      <p>The default font family for text in the <code>&lt;body&gt;</code> is <em>Lato</em></p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              <div class="body-font">
+    <div class="font-block">
+        <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+        <div>abcdefghijklmnopqrstuvwxyz</div>
+        <div>01234567890</div>
+        <div>=~!@#$%^&*()+[]\{}|:;’:”<>?,./</div>
+    </div>
+</div>
+
+                          </div>
+                        </div>
+                  </div>
+                  <div class="section" id="style-typography-headings">
+                    <h3>Headings</h3>
+
+                      <p>Heading use the <em>Oxygen</em> font family and are used for all page titles and page section titles.</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                              <table class="table">
+    <tbody>
+    <tr>
+        <td><h1>h1. Page Title</h1></td>
+        <td class="type-info">Semibold 36px</td>
+    </tr>
+    <tr>
+        <td><h2>h2. Page section heading</h2></td>
+        <td class="type-info">Semibold 30px</td>
+    </tr>
+    <tr>
+        <td><h3>h3. Page section sub-heading</h3></td>
+        <td class="type-info">Semibold 24px</td>
+    </tr>
+    <tr>
+        <td><h4>h4. UA Libraries' heading small</h4></td>
+        <td class="type-info">Semibold 18px</td>
+    </tr>
+    <tr>
+        <td><h5>h5. UA Libraries' heading smaller</h5></td>
+        <td class="type-info">Semibold 14px</td>
+    </tr>
+    <tr>
+        <td><h6>h6. UA Libraries' heading smallest</h6></td>
+        <td class="type-info">Semibold 12px</td>
+    </tr>
+    </tbody>
+</table>
+
+                          </div>
+                        </div>
+                  </div>
                   <div class="section" id="style-buttons">
                     <h2>Buttons</h2>
 
-                      <p><mark>TODO:</mark> Write out description and link to other mentions of button use in docs</p>
+                      <p>Usage rules and recommendations:</p>
+<ul>
+<li>All buttons must use have the <code>.btn</code> class declared, regardless of what type of button is it.</li>
+<li>Always use the <a href="#3dot1dot1">primary button</a>, unless otherwise stated in the styleguide.</li>
+<li>Use <code>&lt;button type=&quot;button&quot;&gt;</code> over <code>&lt;a href=&quot;#&quot;&gt;</code> and <code>&lt;input type=&quot;button&quot;&gt;</code>, whenever possible.</li>
+<li>Always declare a <code>type</code> attribute with your <code>button</code>.</li>
+</ul>
+<p><mark>TODO:</mark> Write out description and link to other mentions of button use in docs</p>
 
 
                   </div>
@@ -326,7 +545,8 @@
                   <div class="section" id="style-buttons-types">
                     <h3>Button Types</h3>
 
-                      <p><mark>TODO:</mark> Elaborate or link to button type uses.</p>
+                      <p>More often than not, you will only use the primary and default buttons. However, there are more options available for success, info, warning, and danger prompts, modals,
+or UI/navigation that need to communicate those states to the user.</p>
 
 
                         <div class="panel panel-default">
@@ -380,61 +600,61 @@
                           </div>
                         </div>
                   </div>
-                  <div class="section" id="style-color">
-                    <h2>Colors</h2>
+                  <div class="section" id="style-buttons-modifiers">
+                    <h3>Button modifiers</h3>
 
-                      <p>Always try to stick to the <a href="#style-color-primary">Primary Colors</a>. Only use <a href="#style-color-secondary">Secondary Colors</a>
-for slight accents or highlights. <a href="#1.2">Secondary Colors</a> should only be dominant
-when used in a child/sub theme.</p>
+                      <p>There are several classes that will modify a buttons appearance.</p>
 
 
                   </div>
-                  <div class="section" id="style-color-primary">
-                    <h3>Primary Colors</h3>
+                  <div class="section" id="style-buttons-modifiers-sizes">
+                    <h4>Button Sizes</h4>
 
-                      <p>Try to use these colors for everything. Only use these colors where deemed appropriate
-via this styleguide.</p>
+                      <p>Utilize the <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> classes for different size buttons</p>
 
 
                         <div class="panel panel-default">
                           <div class="panel-body">
 
-                              <table class="table swatch">
-    <tbody>
-        <tr>
-            <td class="swatch-color swatch-color-link"></td>
-            <td class="swatch-color swatch-color-gray-lighter"></td>
-            <td class="swatch-color swatch-color-body-bg"></td>
-            <td class="swatch-color swatch-color-gray-dark"></td>
-            <td class="swatch-color swatch-color-primary"></td>
-        </tr>
-    </tbody>
-</table>
+                              <p>
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+<button type="button" class="btn btn-default btn-lg">Large button</button>
+</p>
+<p>
+<button type="button" class="btn btn-primary">Default button</button>
+<button type="button" class="btn btn-default">Default button</button>
+</p>
+<p>
+<button type="button" class="btn btn-primary btn-sm">Small button</button>
+<button type="button" class="btn btn-default btn-sm">Small button</button>
+</p>
+<p>
+<button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+<button type="button" class="btn btn-default btn-xs">Extra small button</button>
+</p>
 
                           </div>
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html">&lt;p&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Large button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;Large button&lt;/button&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Default button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default button&lt;/button&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot;&gt;Small button&lt;/button&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-xs&quot;&gt;Extra small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot;&gt;Extra small button&lt;/button&gt;
+&lt;/p&gt;</code>
+                            </pre>
+                          </div>
                         </div>
-                  </div>
-                  <div class="section" id="style-icons">
-                    <h2>Icons</h2>
-
-                      <p>Users tend to skim through context, looking for subtle clues and markers to determine the intent of a link or
-block of text. <strong>Icons</strong> are a great way to make &quot;skimmable&quot; websites. However, to ensure &quot;skimmability&quot;, each icon <strong>must</strong>
-be used in a unique context that defines what that icon means on the website.</p>
-<blockquote>
-<p>Each icon should only represent one thing or idea, otherwise the user may feel disoriented or frustrated when they get an unexpected outcome.</p>
-</blockquote>
-<p><mark>TODO:</mark> Define icons and their use</p>
-
-
-                  </div>
-                  <div class="section" id="style-images">
-                    <h2>Images</h2>
-
-                      <h3 id="responsive-images">Responsive images</h3>
-<p>Images that are children of the <code>.wrap</code> content container image are automatically made responsive</p>
-<p><mark>TODO:</mark> Implement method to override responsive images</p>
-
-
                   </div>
                   <div class="section" id="style-links">
                     <h2>Links</h2>
@@ -661,74 +881,211 @@ Do not use stripped tables if they are just a minor part of a page section.</p>
                         </div>
                       </div>
                   </div>
-                  <div class="section" id="style-typography">
-                    <h2>Typography</h2>
+                  <div class="section" id="style-forms">
+                    <h2>Forms</h2>
 
-                      <p>Use and availability of fonts</p>
-
-
-                  </div>
-                  <div class="section" id="style-typography-body">
-                    <h3>Body Text</h3>
-
-                      <p>The default font family for text in the <code>&lt;body&gt;</code> is <em>Lato</em></p>
+                      <p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>,
+and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default.
+Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>
 
 
                         <div class="panel panel-default">
                           <div class="panel-body">
 
-                              <div class="body-font">
-    <div class="font-block">
-        <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-        <div>abcdefghijklmnopqrstuvwxyz</div>
-        <div>01234567890</div>
-        <div>=~!@#$%^&*()+[]\{}|:;’:”<>?,./</div>
-    </div>
-</div>
+                               <form role="form">
+   <div class="form-group">
+     <label for="exampleInputEmail1">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+   </div>
+   <div class="form-group">
+     <label for="exampleInputPassword1">Password</label>
+     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+   </div>
+   <div class="form-group">
+     <label for="exampleInputFile">File input</label>
+     <input type="file" id="exampleInputFile">
+     <p class="help-block">Example block-level help text here.</p>
+   </div>
+   <div class="checkbox">
+     <label>
+       <input type="checkbox"> Check me out
+     </label>
+   </div>
+ <button type="submit" class="btn btn-default">Submit</button>
+</form>
 
+                          </div>
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html"> &lt;form role=&quot;form&quot;&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;label for=&quot;exampleInputEmail1&quot;&gt;Email address&lt;/label&gt;
+     &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; placeholder=&quot;Enter email&quot;&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;label for=&quot;exampleInputPassword1&quot;&gt;Password&lt;/label&gt;
+     &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword1&quot; placeholder=&quot;Password&quot;&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;label for=&quot;exampleInputFile&quot;&gt;File input&lt;/label&gt;
+     &lt;input type=&quot;file&quot; id=&quot;exampleInputFile&quot;&gt;
+     &lt;p class=&quot;help-block&quot;&gt;Example block-level help text here.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;checkbox&quot;&gt;
+     &lt;label&gt;
+       &lt;input type=&quot;checkbox&quot;&gt; Check me out
+     &lt;/label&gt;
+   &lt;/div&gt;
+ &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code>
+                            </pre>
                           </div>
                         </div>
                   </div>
-                  <div class="section" id="style-typography-headings">
-                    <h3>Headings</h3>
+                  <div class="section" id="style-forms-inline">
+                    <h3>Inline form</h3>
 
-                      <p>Heading use the <em>Oxygen</em> font family and are used for all page titles and page section titles.</p>
+                      <p>Add <code>.form-inline</code> to your <code>&lt;form&gt;</code> for left-aligned and inline-block controls.
+<strong>This only applies to forms within viewports that are at least 768px wide.</strong></p>
 
 
                         <div class="panel panel-default">
                           <div class="panel-body">
 
-                              <table class="table">
-    <tbody>
-    <tr>
-        <td><h1>h1. Page Title</h1></td>
-        <td class="type-info">Semibold 36px</td>
-    </tr>
-    <tr>
-        <td><h2>h2. Page section heading</h2></td>
-        <td class="type-info">Semibold 30px</td>
-    </tr>
-    <tr>
-        <td><h3>h3. Page section sub-heading</h3></td>
-        <td class="type-info">Semibold 24px</td>
-    </tr>
-    <tr>
-        <td><h4>h4. UA Libraries' heading small</h4></td>
-        <td class="type-info">Semibold 18px</td>
-    </tr>
-    <tr>
-        <td><h5>h5. UA Libraries' heading smaller</h5></td>
-        <td class="type-info">Semibold 14px</td>
-    </tr>
-    <tr>
-        <td><h6>h6. UA Libraries' heading smallest</h6></td>
-        <td class="type-info">Semibold 12px</td>
-    </tr>
-    </tbody>
-</table>
+                               <form class="form-inline" role="form">
+   <div class="form-group">
+     <label class="sr-only" for="exampleInputEmail2">Email address</label>
+     <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+   </div>
+   <div class="form-group">
+     <div class="input-group">
+       <div class="input-group-addon">@</div>
+         <input class="form-control" type="email" placeholder="Enter email">
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="sr-only" for="exampleInputPassword2">Password</label>
+       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+     </div>
+     <div class="checkbox">
+       <label>
+         <input type="checkbox"> Remember me
+       </label>
+     </div>
+   <button type="submit" class="btn btn-default">Sign in</button>
+ </form>
 
                           </div>
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html"> &lt;form class=&quot;form-inline&quot; role=&quot;form&quot;&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;label class=&quot;sr-only&quot; for=&quot;exampleInputEmail2&quot;&gt;Email address&lt;/label&gt;
+     &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail2&quot; placeholder=&quot;Enter email&quot;&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;div class=&quot;input-group&quot;&gt;
+       &lt;div class=&quot;input-group-addon&quot;&gt;@&lt;/div&gt;
+         &lt;input class=&quot;form-control&quot; type=&quot;email&quot; placeholder=&quot;Enter email&quot;&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;form-group&quot;&gt;
+       &lt;label class=&quot;sr-only&quot; for=&quot;exampleInputPassword2&quot;&gt;Password&lt;/label&gt;
+       &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword2&quot; placeholder=&quot;Password&quot;&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;checkbox&quot;&gt;
+       &lt;label&gt;
+         &lt;input type=&quot;checkbox&quot;&gt; Remember me
+       &lt;/label&gt;
+     &lt;/div&gt;
+   &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Sign in&lt;/button&gt;
+ &lt;/form&gt;</code>
+                            </pre>
+                          </div>
                         </div>
+                  </div>
+                  <div class="section" id="style-forms-horizontal">
+                    <h3>Horizontal form</h3>
+
+                      <p>Use Bootstrap&#39;s predefined grid classes to align labels and groups of form controls in a horizontal layout by adding <code>.form-horizontal</code> to
+the form. Doing so changes <code>.form-group</code>s to behave as grid rows, so no need for <code>.row</code>.</p>
+
+
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+
+                               <form class="form-horizontal" role="form">
+   <div class="form-group">
+     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+     <div class="col-sm-10">
+       <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+     </div>
+   </div>
+   <div class="form-group">
+     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+     <div class="col-sm-10">
+       <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+     </div>
+   </div>
+   <div class="form-group">
+     <div class="col-sm-offset-2 col-sm-10">
+       <div class="checkbox">
+         <label>
+           <input type="checkbox"> Remember me
+         </label>
+       </div>
+     </div>
+   </div>
+   <div class="form-group">
+     <div class="col-sm-offset-2 col-sm-10">
+       <button type="submit" class="btn btn-default">Sign in</button>
+     </div>
+   </div>
+ </form>
+
+                          </div>
+                          <div class="panel-footer">
+                            <pre>
+                              <code class="html"> &lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;label for=&quot;inputEmail3&quot; class=&quot;col-sm-2 control-label&quot;&gt;Email&lt;/label&gt;
+     &lt;div class=&quot;col-sm-10&quot;&gt;
+       &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;inputEmail3&quot; placeholder=&quot;Email&quot;&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;label for=&quot;inputPassword3&quot; class=&quot;col-sm-2 control-label&quot;&gt;Password&lt;/label&gt;
+     &lt;div class=&quot;col-sm-10&quot;&gt;
+       &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;inputPassword3&quot; placeholder=&quot;Password&quot;&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;
+       &lt;div class=&quot;checkbox&quot;&gt;
+         &lt;label&gt;
+           &lt;input type=&quot;checkbox&quot;&gt; Remember me
+         &lt;/label&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;form-group&quot;&gt;
+     &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;
+       &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Sign in&lt;/button&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/form&gt;</code>
+                            </pre>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="section" id="style-images">
+                    <h2>Images</h2>
+
+                      <h3 id="responsive-images">Responsive images</h3>
+<p>Images that are children of the <code>.wrap</code> content container image are automatically made responsive</p>
+<p><mark>TODO:</mark> Implement method to override responsive images</p>
+
+
                   </div>
             </div>
         </div>

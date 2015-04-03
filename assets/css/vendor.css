@@ -110,13 +110,13 @@ a.service-card:focus {
   width: 75%;
   display: block;
   opacity: 0;
-  -webkit-transition: opacity  .2s .0s, visibility 0s  .2s;
-  -moz-transition: opacity  .2s .0s, visibility 0s  .2s;
-  transition: opacity  .2s .0s, visibility 0s  .2s;
+  -webkit-transition: opacity  .2s 0s;
+  -moz-transition: opacity  .2s 0s;
+  transition: opacity  .2s 0s;
 }
 .tabset-vertical > .tab-content > .tab-pane.active {
   opacity: 1;
-  -webkit-transition: opacity  .2s 0s, visibility 0s 0s;
-  -moz-transition: opacity  .2s 0s, visibility 0s 0s;
-  transition: opacity  .2s 0s, visibility 0s 0s;
+  -webkit-transition: opacity  .2s .1s;
+  -moz-transition: opacity  .2s .1s;
+  transition: opacity  .2s .1s;
 }

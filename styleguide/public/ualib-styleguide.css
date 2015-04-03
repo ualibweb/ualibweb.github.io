@@ -70,7 +70,7 @@ hr {
 .nav-submenu > li > ul > li.active a:focus,
 .nav-submenu > li > ul > li:hover a:focus,
 .nav-submenu > li > ul > li:focus a:focus {
-  border-color: #777777;
+  border-color: #999999;
 }
 /* Example and Markup style exceptions */
 .panel-default > .panel-body > .table-responsive {
@@ -156,6 +156,7 @@ hr {
 table .swatch-color {
   border: none !important;
 }
+/* Swatch Color Mixin */
 /* Primary Colors */
 .swatch-color-link {
   background-color: #428bca;
@@ -171,11 +172,41 @@ table .swatch-color {
   color: #f6f6f6;
   content: "#993333";
 }
-.swatch-color-gray-lighter {
-  background-color: #f9f9f9;
+.swatch-color-body-bg {
+  background-color: #ffffff;
 }
-.table .swatch-color-gray-lighter:after {
-  content: "#f9f9f9";
+.table .swatch-color-body-bg:after {
+  content: "#ffffff";
+}
+/* Secondary Color Swatches */
+.swatch-color-orange {
+  background-color: #cc5d30;
+}
+.table .swatch-color-orange:after {
+  color: #f6f6f6;
+  content: "#cc5d30";
+}
+.swatch-color-dark-blue {
+  background-color: #184866;
+}
+.table .swatch-color-dark-blue:after {
+  color: #f6f6f6;
+  content: "#184866";
+}
+.swatch-color-green {
+  background-color: #61a661;
+}
+.table .swatch-color-green:after {
+  color: #f6f6f6;
+  content: "#61a661";
+}
+/* Gray Value Swatches */
+.swatch-color-gray-darker {
+  background-color: #222222;
+}
+.table .swatch-color-gray-darker:after {
+  color: #f6f6f6;
+  content: "#222222";
 }
 .swatch-color-gray-dark {
   background-color: #333333;
@@ -184,45 +215,25 @@ table .swatch-color {
   color: #f6f6f6;
   content: "#333333";
 }
-.swatch-color-body-bg {
-  background-color: #ffffff;
+.swatch-color-gray {
+  background-color: #666666;
 }
-.table .swatch-color-body-bg:after {
-  content: "#ffffff";
-}
-/* Secondary Colors *
-
-.swatch-color-orange{
-  background-color: @orange;
-}
-.table .swatch-color-orange:after{
+.table .swatch-color-gray:after {
   color: #f6f6f6;
-  content: "@{orange}";
+  content: "#666666";
 }
-
-.swatch-color-dark-blue{
-  background-color: @dark-blue;
+.swatch-color-gray-light {
+  background-color: #999999;
 }
-.table .swatch-color-dark-blue:after{
-  color: #f6f6f6;
-  content: "@{dark-blue}";
+.table .swatch-color-gray-light:after {
+  content: "#999999";
 }
-
-.swatch-color-gray{
-  background-color: @gray;
+.swatch-color-gray-lighter {
+  background-color: #f9f9f9;
 }
-.table .swatch-color-gray:after{
-  color: #f6f6f6;
-  content: "@{gray}";
+.table .swatch-color-gray-lighter:after {
+  content: "#f9f9f9";
 }
-
-.swatch-color-green{
-  background-color: @green;
-}
-.table .swatch-color-green:after{
-  color: #f6f6f6;
-  content: "@{green}";
-}*/
 /* Footer Styles */
 footer {
   min-height: 200px;
