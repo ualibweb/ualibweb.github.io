@@ -32,8 +32,8 @@ module.exports = function (grunt) {
         },
         bower_concat: {
             all: {
-                dest: 'assets/js/_bower.js',
-                cssDest: 'assets/css/_bower.css',
+                dest: 'assets/js/bower.js',
+                cssDest: 'assets/css/bower.css',
                 include: [
                     'angular-strap',
                     'angular-scroll',
