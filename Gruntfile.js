@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // Metadata
         pkg: grunt.file.readJSON('package.json'),
-        bower: grunt.file.readJSON('.bowerrc'),
+        bwr: grunt.file.readJSON('.bowerrc'),
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
             '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
             '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
@@ -14,21 +14,34 @@ module.exports = function (grunt) {
         concat: {
             vendor_css: {
                 src: [
-                    '<%= bower.directory %>/Yamm3/yamm/yamm.css',
-                    '<%= bower.directory %>/ualib-ui/dist/ui-components.css'
+                    '<%= bwr.directory %>/Yamm3/yamm/yamm.css',
+                    '<%= bwr.directory %>/ualib-ui/dist/ui-components.css'
                 ],
                 dest: 'assets/css/vendor.css'
             },
             vendor_js: {
                 src: [
-                    '<%= bower.directory %>/angular/angular.min.js',
-                    '<%= bower.directory %>/angular-animate/angular-animate.min.js',
-                    '<%= bower.directory %>/angular-strap/dist/angular-strap.min.js',
-                    '<%= bower.directory %>/angular-strap/dist/angular-strap.tpl.min.js',
-                    '<%= bower.directory %>/ualib-ui/dist/ui-components-templates.js',
-                    '<%= bower.directory %>/ualib-ui/dist/ui-components.js'
+                    '<%= bwr.directory %>/angular-strap/dist/angular-strap.min.js',
+                    '<%= bwr.directory %>/angular-strap/dist/angular-strap.tpl.min.js',
+                    '<%= bwr.directory %>/ualib-ui/dist/vendor.js',
+                    '<%= bwr.directory %>/ualib-ui/dist/ualib-ui-templates.js',
+                    '<%= bwr.directory %>/ualib-ui/dist/ualib-ui.js'
                 ],
                 dest: 'assets/js/vendor.js'
+            }
+        },
+        bower_concat: {
+            all: {
+                dest: 'assets/js/_bower.js',
+                cssDest: 'assets/css/_bower.css',
+                include: [
+                    'angular-strap',
+                    'angular-scroll',
+                    'ualib-ui'
+                ],
+                bowerOptions: {
+                    relative: false
+                }
             }
         },
         cssmin: {
@@ -46,12 +59,30 @@ module.exports = function (grunt) {
             src: ['src/less/**']
         },
         copy: {
-            src: {
+            less: {
                 files: [{
                     expand: true,
-                    cwd: '<%= bower.directory %>/roots-ualib/assets/less',
-                    src: ['**'],
+                    flatten: true,
+                    cwd: '<%= bwr.directory %>',
+                    src: [
+                        'roots-ualib/**/*.less',
+                        'ualib-ui/**/*.less'
+                    ],
                     dest: 'assets/less/',
+                    filter: 'isFile'
+                }]
+            },
+            docs: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    cwd: '<%= bwr.directory %>',
+                    src: [
+                        'roots-ualib/**/docs/**/*',
+                        'ualib-ui/**/docs/**/*',
+                        '!**/*.less'
+                    ],
+                    dest: 'assets/less/docs/',
                     filter: 'isFile'
                 }]
             },
@@ -132,7 +163,7 @@ module.exports = function (grunt) {
                 command: 'kss-node assets/less styleguide --template src/template --helpers src/template/helpers --custom codetemplate --custom hidemarkup --custom icon --custom menublurb'
             },
             prep: {
-                command: 'bower update roots-ualib'
+                command: 'bower update'
             }
         }
     });
@@ -144,9 +175,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-bower-concat');
 
     // Default task
-    grunt.registerTask('default', ['prep', 'exec:kss', 'less', 'concat', 'cssmin', 'copy:dist']);
-    grunt.registerTask('prep', ['exec:prep', 'clean:src', 'copy:src']);
+    grunt.registerTask('default', ['exec:kss', 'less', 'bower_concat', 'cssmin', 'copy:dist']);
+    grunt.registerTask('build', ['prep', 'default']);
+    grunt.registerTask('prep', ['exec:prep', 'copy:less', 'copy:docs']);
 };
 

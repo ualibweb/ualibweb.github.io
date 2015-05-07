@@ -13,12 +13,12 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" id="roots_cdn-css" href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Oxygen:300,400,700|Open+Sans:300,400,600,700|EB+Garamond|Lato:300,400,700" type="text/css" media="all">
   <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
-  <link href="../assets/css/vendor.css" rel="stylesheet">
+  <link href="../assets/css/_bower.css" rel="stylesheet">
   <link rel="stylesheet" href="public/ualib-styleguide.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.css" rel="stylesheet">
+  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ualib-ui.css" rel="stylesheet">
   
 </head>
 <body>
@@ -66,13 +66,6 @@
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-style.html#style-buttons">
-                            <span class="fa fa-hand-o-up"></span>
-                          <h4>Buttons</h4>
-                            <p>Types of buttons available to use on the website</p>
-                        </a>
-                      </div>
-                      <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-style.html#style-links">
                             <span class="fa fa-link"></span>
                           <h4>Links</h4>
@@ -81,7 +74,7 @@
                       </div>
                       <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-style.html#style-tables">
-                            <span class="fa fa-tables"></span>
+                            <span class="fa fa-table"></span>
                           <h4>Tables</h4>
                             <p>Types of tables and where to use them</p>
                         </a>
@@ -128,20 +121,17 @@
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-components.html#components-pages_submenus">
-                            <span class="fa fa-columns"></span>
-                          <h4>Pages &amp; Submenus</h4>
-                            <p>Automatically generate submenus using the Page component</p>
-                        </a>
-                      </div>
-                      <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-components.html#components-service_cards">
-                          <h4>Service Cards</h4>
+                        <a class="service-card" href="section-components.html#components-scrollfix">
+                            <span class="fa fa-paperclip"></span>
+                          <h4>Scrollfix</h4>
+                            <p>Elements can become fixed based on scroll position</p>
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-components.html#components-tabs">
+                            <span class="fa fa-files-o"></span>
                           <h4>Tabs</h4>
+                            <p>Easily create horizontal and vertical tabs</p>
                         </a>
                       </div>
                   </div>
@@ -162,6 +152,13 @@
                             <span class="fa fa-th"></span>
                           <h4>The Grid</h4>
                             <p>Make responsive layouts using the grid</p>
+                        </a>
+                      </div>
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-layout.html#layout-pages_submenus">
+                            <span class="fa fa-sitemap"></span>
+                          <h4>Pages &amp; Submenus</h4>
+                            <p>Easily create pages &quot;menued&quot; sections</p>
                         </a>
                       </div>
                   </div>
@@ -248,28 +245,6 @@
                               <li data-target="#style-typography-headings" bs-scrollspy>
                                 <a class="submenu-item" href="#style-typography-headings">
                                   Headings
-                                </a>
-                              </li>
-                        </ul>
-                      </li>
-                      <li data-target="#style-buttons" bs-scrollspy>
-                        <a class="menu-item" href="#style-buttons">
-                          Buttons
-                        </a>
-                        <ul class="nav ">
-                              <li data-target="#style-buttons-tags" bs-scrollspy>
-                                <a class="submenu-item" href="#style-buttons-tags">
-                                  Button Tags
-                                </a>
-                              </li>
-                              <li data-target="#style-buttons-types" bs-scrollspy>
-                                <a class="submenu-item" href="#style-buttons-types">
-                                  Button Types
-                                </a>
-                              </li>
-                              <li data-target="#style-buttons-modifiers" bs-scrollspy>
-                                <a class="submenu-item" href="#style-buttons-modifiers">
-                                  Button modifiers
                                 </a>
                               </li>
                         </ul>
@@ -499,163 +474,6 @@ be used in a unique context that defines what that icon means on the website.</p
                           </div>
                         </div>
                   </div>
-                  <div class="section" id="style-buttons">
-                    <h2>Buttons</h2>
-
-                      <p>Usage rules and recommendations:</p>
-<ul>
-<li>All buttons must use have the <code>.btn</code> class declared, regardless of what type of button is it.</li>
-<li>Always use the <a href="#3dot1dot1">primary button</a>, unless otherwise stated in the styleguide.</li>
-<li>Use <code>&lt;button type=&quot;button&quot;&gt;</code> over <code>&lt;a href=&quot;#&quot;&gt;</code> and <code>&lt;input type=&quot;button&quot;&gt;</code>, whenever possible.</li>
-<li>Always declare a <code>type</code> attribute with your <code>button</code>.</li>
-</ul>
-<p><mark>TODO:</mark> Write out description and link to other mentions of button use in docs</p>
-
-
-                  </div>
-                  <div class="section" id="style-buttons-tags">
-                    <h3>Button Tags</h3>
-
-                      <p>There are four <code>html tags</code> you can use to create buttons: <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>, and <code>&lt;input&gt;</code>.
-<br><mark>TODO:</mark> Elaborate on <code>&lt;button&gt;</code> use exceptions and define about <code>type</code> attribute is required for <code>&lt;button&gt;</code> and <code>&lt;input&gt;</code> buttons.</p>
-<blockquote>
-<p>Use <code>&lt;button&gt;</code> over <code>&lt;a&gt;</code> and <code>&lt;input&gt;</code> where ever possible. There are rare instances where <code>&lt;a&gt;</code> or <code>&lt;input&gt;</code> should be used.</p>
-</blockquote>
-
-
-                        <div class="panel panel-default">
-                          <div class="panel-body">
-
-                              <a class="btn btn-default" href="#" role="button">Link</a>
-<button class="btn btn-default" type="submit">Button</button>
-<input class="btn btn-default" type="button" value="Input">
-<input class="btn btn-default" type="submit" value="Submit">
-
-                          </div>
-                          <div class="panel-footer">
-                            <pre>
-                              <code class="html">&lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Link&lt;/a&gt;
-&lt;button class=&quot;btn btn-default&quot; type=&quot;submit&quot;&gt;Button&lt;/button&gt;
-&lt;input class=&quot;btn btn-default&quot; type=&quot;button&quot; value=&quot;Input&quot;&gt;
-&lt;input class=&quot;btn btn-default&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code>
-                            </pre>
-                          </div>
-                        </div>
-                  </div>
-                  <div class="section" id="style-buttons-types">
-                    <h3>Button Types</h3>
-
-                      <p>More often than not, you will only use the primary and default buttons. However, there are more options available for success, info, warning, and danger prompts, modals,
-or UI/navigation that need to communicate those states to the user.</p>
-
-
-                        <div class="panel panel-default">
-                          <div class="panel-body">
-
-                              <!-- Standard button -->
-<button type="button" class="btn btn-default">Default</button>
-
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
-
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
-
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
-
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
-
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-danger">Danger</button>
-
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<button type="button" class="btn btn-link">Link</button>
-
-                          </div>
-                          <div class="panel-footer">
-                            <pre>
-                              <code class="html">&lt;!-- Standard button --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default&lt;/button&gt;
-
-&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
-
-&lt;!-- Indicates a successful or positive action --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
-
-&lt;!-- Contextual button for informational alert messages --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
-
-&lt;!-- Indicates caution should be taken with this action --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
-
-&lt;!-- Indicates a dangerous or potentially negative action --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
-
-&lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Link&lt;/button&gt;</code>
-                            </pre>
-                          </div>
-                        </div>
-                  </div>
-                  <div class="section" id="style-buttons-modifiers">
-                    <h3>Button modifiers</h3>
-
-                      <p>There are several classes that will modify a buttons appearance.</p>
-
-
-                  </div>
-                  <div class="section" id="style-buttons-modifiers-sizes">
-                    <h4>Button Sizes</h4>
-
-                      <p>Utilize the <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> classes for different size buttons</p>
-
-
-                        <div class="panel panel-default">
-                          <div class="panel-body">
-
-                              <p>
-<button type="button" class="btn btn-primary btn-lg">Large button</button>
-<button type="button" class="btn btn-default btn-lg">Large button</button>
-</p>
-<p>
-<button type="button" class="btn btn-primary">Default button</button>
-<button type="button" class="btn btn-default">Default button</button>
-</p>
-<p>
-<button type="button" class="btn btn-primary btn-sm">Small button</button>
-<button type="button" class="btn btn-default btn-sm">Small button</button>
-</p>
-<p>
-<button type="button" class="btn btn-primary btn-xs">Extra small button</button>
-<button type="button" class="btn btn-default btn-xs">Extra small button</button>
-</p>
-
-                          </div>
-                          <div class="panel-footer">
-                            <pre>
-                              <code class="html">&lt;p&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Large button&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;Large button&lt;/button&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Default button&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default button&lt;/button&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Small button&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot;&gt;Small button&lt;/button&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-xs&quot;&gt;Extra small button&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot;&gt;Extra small button&lt;/button&gt;
-&lt;/p&gt;</code>
-                            </pre>
-                          </div>
-                        </div>
-                  </div>
                   <div class="section" id="style-links">
                     <h2>Links</h2>
 
@@ -666,8 +484,8 @@ or UI/navigation that need to communicate those states to the user.</p>
                   <div class="section" id="style-links-file-external">
                     <h3>External &amp; File Links</h3>
 
-                      <p>Links to download files and links to external website are automatically appended with a context icon.
-This icon lets the user know what to expect when they click the link. You can remove a link icon manually with the <code>.no-icon</code> class.
+                      <p>Links links to external should be given the <code>.external-link</code> class. Links to download files website are automatically appended with a context icon.
+The icons lets the user know what to expect when they click the link. You can remove a link&#39;s icon manually with the <code>.no-icon</code> class.
 Use the <code>.no-icon</code> class cautiously - if you&#39;re not sure whether to use it, you probably shouldn&#39;t.</p>
 <p><mark>TODO:</mark> Define when this differs via parent element context (i.e., in menus, footers, etc.)</p>
 
@@ -686,14 +504,15 @@ Use the <code>.no-icon</code> class cautiously - if you&#39;re not sure whether 
                         </div>
                         <div class="panel-footer">
                           <pre>
-                            <code class="html">&lt;a href=&quot;pdf-file-path.pdf&quot;&gt;PDF file link&lt;/a&gt;
+                            <code class="html">/* External links with external-link class */
+&lt;a class=&quot;external-link&quot; href=&quot;http://codepen.io/ashleynolan/pen/rpjHg&quot;&gt;Link to external website&lt;/a&gt;
+&lt;a class=&quot;external-link&quot; href=&quot;http://codepen.io/ashleynolan/pen/rpjHg&quot; class=&quot;no-icon&quot;&gt;No link icon.&lt;/a&gt;
+/* Links to files get icons automatically added to them! */
+&lt;a href=&quot;pdf-file-path.pdf&quot;&gt;PDF file link&lt;/a&gt;
 &lt;a href=&quot;word-file-path.xlsx&quot;&gt;Excel file link&lt;/a&gt;
 &lt;a href=&quot;word-file-path.xls&quot;&gt;Works for old Excel(*.xsl) extensions&lt;/a&gt;
 &lt;a href=&quot;excel-file-path.docx&quot;&gt;Word file link&lt;/a&gt;
-&lt;a href=&quot;excel-file-path.doc&quot;&gt;Works for old Word(*.doc) extensions&lt;/a&gt;
-&lt;a href=&quot;http://codepen.io/ashleynolan/pen/rpjHg&quot;&gt;Link to external website&lt;/a&gt;
-&lt;a href=&quot;https://secure-site-url&quot;&gt;Works with HTTPS too!&lt;/a&gt;
-&lt;a href=&quot;https://secure-site-url&quot; class=&quot;no-icon&quot;&gt;No link icon.&lt;/a&gt;</code>
+&lt;a href=&quot;http://www.someotherdomain.com/excel-file-path.doc&quot;&gt;Works for old Word(*.doc) extensions&lt;/a&gt;</code>
                           </pre>
                         </div>
                       </div>
@@ -1097,11 +916,11 @@ the form. Doing so changes <code>.form-group</code>s to behave as grid rows, so 
 
 </footer>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
-<script src="../assets/js/vendor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular-animate.js"></script>
+<script src="../assets/js/_bower.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
   angular.module('styleguide', ['ngAnimate', 'mgcrea.ngStrap', 'ualib.ui'])

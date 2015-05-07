@@ -13,12 +13,12 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500|Oxygen:400,700,300|Open+Sans|EB+Garamond|Lato:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" id="roots_cdn-css" href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Oxygen:300,400,700|Open+Sans:300,400,600,700|EB+Garamond|Lato:300,400,700" type="text/css" media="all">
   <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
-  <link href="../assets/css/vendor.css" rel="stylesheet">
+  <link href="../assets/css/_bower.css" rel="stylesheet">
   <link rel="stylesheet" href="public/ualib-styleguide.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ui-components.css" rel="stylesheet">
+  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ualib-ui.css" rel="stylesheet">
   
 </head>
 <body>
@@ -66,13 +66,6 @@
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-style.html#style-buttons">
-                            <span class="fa fa-hand-o-up"></span>
-                          <h4>Buttons</h4>
-                            <p>Types of buttons available to use on the website</p>
-                        </a>
-                      </div>
-                      <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-style.html#style-links">
                             <span class="fa fa-link"></span>
                           <h4>Links</h4>
@@ -81,7 +74,7 @@
                       </div>
                       <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-style.html#style-tables">
-                            <span class="fa fa-tables"></span>
+                            <span class="fa fa-table"></span>
                           <h4>Tables</h4>
                             <p>Types of tables and where to use them</p>
                         </a>
@@ -128,20 +121,17 @@
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-components.html#components-pages_submenus">
-                            <span class="fa fa-columns"></span>
-                          <h4>Pages &amp; Submenus</h4>
-                            <p>Automatically generate submenus using the Page component</p>
-                        </a>
-                      </div>
-                      <div class="col-xs-3 menu-col">
-                        <a class="service-card" href="section-components.html#components-service_cards">
-                          <h4>Service Cards</h4>
+                        <a class="service-card" href="section-components.html#components-scrollfix">
+                            <span class="fa fa-paperclip"></span>
+                          <h4>Scrollfix</h4>
+                            <p>Elements can become fixed based on scroll position</p>
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-components.html#components-tabs">
+                            <span class="fa fa-files-o"></span>
                           <h4>Tabs</h4>
+                            <p>Easily create horizontal and vertical tabs</p>
                         </a>
                       </div>
                   </div>
@@ -162,6 +152,13 @@
                             <span class="fa fa-th"></span>
                           <h4>The Grid</h4>
                             <p>Make responsive layouts using the grid</p>
+                        </a>
+                      </div>
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-layout.html#layout-pages_submenus">
+                            <span class="fa fa-sitemap"></span>
+                          <h4>Pages &amp; Submenus</h4>
+                            <p>Easily create pages &quot;menued&quot; sections</p>
                         </a>
                       </div>
                   </div>
@@ -221,6 +218,13 @@
                                   Grid creation
                                 </a>
                               </li>
+                        </ul>
+                      </li>
+                      <li data-target="#layout-pages_submenus" bs-scrollspy>
+                        <a class="menu-item" href="#layout-pages_submenus">
+                          Pages &amp; Submenus
+                        </a>
+                        <ul class="nav ">
                         </ul>
                       </li>
                 </ul>
@@ -330,6 +334,67 @@ designed to adjust column sizes relative to different device sizes</p>
 
 
                   </div>
+                  <div class="section" id="layout-pages_submenus">
+                    <h2>Pages &amp; Submenus</h2>
+
+                      <p>Submenus are automatically generated by useing the Page component.
+This allows content creators to focus on content without having to worry about navigation.
+Assign the <code>.page-with-menu</code> class to the container that will hold each &quot;menued&quot; section of the page, then add the <code>.page-section</code> class to each section.</p>
+<p>Menu items are assigned using the <code>&lt;h2&gt;</code> heading or the <code>title</code> attribute for each <code>.page-section</code>.
+<strong>Always</strong> use the <code>title</code> attribute for long section headings.</p>
+<p>You can also assign menu icons for each section using the <code>icon</code> attribute for each <code>.page-section</code>.
+<em>If</em> icons are used, every page-section <em>must</em> have an icon and vice versa. Do not use <code>icon</code> unless there are appropriate icons for every <code>.page-section</code>.</p>
+
+
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+    <div class="col-md-9">
+        <div id="Section_1">
+            <h2>Section 1</h2>
+            <p>...content...</p>
+        </div>
+        <div id="Section_2">
+            <h2>Section 2 heading too long for the menu</h2>
+            <p>...</p>
+        </div>
+    </div>
+    <div class="col-md-3 page-section-menu">
+        <div>
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                <a href="#Section_1">
+                    <span class="fa fa-fw fa-spoon"></span>
+                    Section 1
+                </a>
+                </li>
+                <li>
+                <a href="#Section_2">
+                    <span class="fa fa-fw fa-bicycle"></span>
+                    Section 2
+                </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+                        </div>
+                        <div class="panel-footer">
+                          <pre>
+                            <code class="html"> &lt;div class=&quot;page-with-menu&quot;&gt;
+   &lt;div class=&quot;page-section&quot; icon=&quot;fa-spoon&quot;&gt;
+     &lt;h2&gt;Section 1&lt;/h2&gt;
+     &lt;p&gt;...content...&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;page-section&quot; title=&quot;Section 2&quot; icon=&quot;fa-bicycle&quot;&gt;
+     &lt;h2&gt;Section 2 heading too long for the menu&lt;/h2&gt;
+     &lt;p&gt;...&lt;/p&gt;
+   &lt;/section&gt;
+ &lt;/div&gt;</code>
+                          </pre>
+                        </div>
+                      </div>
+                  </div>
             </div>
         </div>
     </main>
@@ -340,11 +405,11 @@ designed to adjust column sizes relative to different device sizes</p>
 
 </footer>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
-<script src="../assets/js/vendor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular-animate.js"></script>
+<script src="../assets/js/_bower.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
   angular.module('styleguide', ['ngAnimate', 'mgcrea.ngStrap', 'ualib.ui'])
