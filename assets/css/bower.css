@@ -9,6 +9,9 @@
 .page-with-menu.loaded {
   opacity: 1;
 }
+.page-section-menu {
+  font-size: 17px;
+}
 
 .scrollfix {
   position: fixed;
