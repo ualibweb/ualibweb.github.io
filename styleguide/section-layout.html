@@ -14,11 +14,10 @@
 
   <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
   <link rel="stylesheet" id="roots_cdn-css" href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Oxygen:300,400,700|Open+Sans:300,400,600,700|EB+Garamond|Lato:300,400,700" type="text/css" media="all">
-  <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.min.css">
-  <link href="../assets/css/bower.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://rawgit.com/ualibweb/roots-ualib/master/assets/css/main.css">
+  <!--<link href="../assets/css/bower.css" rel="stylesheet">-->
   <link rel="stylesheet" href="public/ualib-styleguide.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="https://rawgit.com/ualibweb/ui-components/master/dist/ualib-ui.css" rel="stylesheet">
   
 </head>
 <body>
@@ -63,6 +62,13 @@
                             <span class="fa fa-font"></span>
                           <h4>Typography</h4>
                             <p>Fonts used for body, heading, and other text elements</p>
+                        </a>
+                      </div>
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-style.html#style-buttons">
+                            <span class="fa fa-hand-o-up"></span>
+                          <h4>Buttons</h4>
+                            <p>Types of buttons available to use on the website</p>
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
@@ -128,6 +134,13 @@
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-components.html#components-service_cards">
+                            <span class="fa fa-ticket"></span>
+                          <h4>Service Cards</h4>
+                            <p>Highlight and link to services or resources</p>
+                        </a>
+                      </div>
+                      <div class="col-xs-3 menu-col">
                         <a class="service-card" href="section-components.html#components-tabs">
                             <span class="fa fa-files-o"></span>
                           <h4>Tabs</h4>
@@ -152,6 +165,13 @@
                             <span class="fa fa-th"></span>
                           <h4>The Grid</h4>
                             <p>Make responsive layouts using the grid</p>
+                        </a>
+                      </div>
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-layout.html#layout-page-slice">
+                            <span class="fa fa-align-justify"></span>
+                          <h4>Page Slices</h4>
+                            <p>Easily format sections of a page</p>
                         </a>
                       </div>
                       <div class="col-xs-3 menu-col">
@@ -216,6 +236,18 @@
                               <li data-target="#layout-grid-creation" bs-scrollspy>
                                 <a class="submenu-item" href="#layout-grid-creation">
                                   Grid creation
+                                </a>
+                              </li>
+                        </ul>
+                      </li>
+                      <li data-target="#layout-page-slice" bs-scrollspy>
+                        <a class="menu-item" href="#layout-page-slice">
+                          Page Slices
+                        </a>
+                        <ul class="nav ">
+                              <li data-target="#layout-page-slice-striped" bs-scrollspy>
+                                <a class="submenu-item" href="#layout-page-slice-striped">
+                                  Striped Page Slices
                                 </a>
                               </li>
                         </ul>
@@ -333,6 +365,62 @@ designed to adjust column sizes relative to different device sizes</p>
                       <p>To create a <code>grid</code> you must define <code>rows</code> and then put <code>columns</code> inside those <code>rows</code>.</p>
 
 
+                  </div>
+                  <div class="section" id="layout-page-slice">
+                    <h2>Page Slices</h2>
+
+                      <p>Use the <code>.page-slice</code> class to distinguish separate content sections of a page.</p>
+<p>Note that <code>.page-slice</code> is built into the <a href="section-layout.html#layout-pages_submenus">page with menus</a>layout component</p>
+
+
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="page-slice">
+    <h2>I'm a page slice</h2>
+    <p>Breaking up content into slices like this really makes it easier to skim!</p>
+</div>
+<div class="page-slice">
+    <h2>Yet another page slice</h2>
+    <p>.....</p>
+</div>
+                        </div>
+                        <div class="panel-footer">
+                          <pre>
+                            <code class="html"> &lt;div class=&quot;page-slice&quot;&gt;
+   &lt;h2&gt;Page slice title&lt;/h2&gt;
+   &lt;p&gt;...&lt;/p&gt;
+ &lt;/div&gt;</code>
+                          </pre>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="section" id="layout-page-slice-striped">
+                    <h3>Striped Page Slices</h3>
+
+                      <p>Sometimes pages have many content sections. To help delineate before pages with many content sections you
+can use the <code>.page-slice-striped</code> class along side the <code>.page-slice</code> to create page slices with alternating background colors.</p>
+
+
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="page-slice page-slice-striped">
+    <h2>Page Slice</h2>
+    <p>Page slices with alternating background color can help delineate pages with a lot of page slices</p>
+</div>
+<div class="page-slice page-slice-striped">
+    <h2>I'm striped!</h2>
+    <p>.....</p>
+</div>
+                        </div>
+                        <div class="panel-footer">
+                          <pre>
+                            <code class="html"> &lt;div class=&quot;page-slice page-slice-striped&quot;&gt;
+   &lt;h2&gt;Page slice title&lt;/h2&gt;
+   &lt;p&gt;...&lt;/p&gt;
+ &lt;/div&gt;</code>
+                          </pre>
+                        </div>
+                      </div>
                   </div>
                   <div class="section" id="layout-pages_submenus">
                     <h2>Pages &amp; Submenus</h2>

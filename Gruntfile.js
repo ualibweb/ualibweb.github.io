@@ -62,13 +62,20 @@ module.exports = function (grunt) {
             less: {
                 files: [{
                     expand: true,
-                    flatten: true,
                     cwd: '<%= bwr.directory %>',
                     src: [
                         'roots-ualib/**/*.less',
                         'ualib-ui/**/*.less'
                     ],
                     dest: 'assets/less/',
+                    filter: 'isFile'
+                }, {
+                    expand: true,
+                    cwd: '<%= bwr.directory %>',
+                    src: [
+                        'bootstrap/less/**/*.less'
+                    ],
+                    dest: 'assets/less/roots-ualib/assets/vendor/',
                     filter: 'isFile'
                 }]
             },
