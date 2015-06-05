@@ -99,6 +99,13 @@
                             <p>Using images in a responsive way</p>
                         </a>
                       </div>
+                      <div class="col-xs-3 menu-col">
+                        <a class="service-card" href="section-style.html#style-helpers">
+                            <span class="fa fa-wrench"></span>
+                          <h4>Helper Classes</h4>
+                            <p>Helper classes let you add minor style tweaks to elements</p>
+                        </a>
+                      </div>
                   </div>
                 </div>
               </li>
@@ -301,6 +308,11 @@
                                   External &amp; File Links
                                 </a>
                               </li>
+                              <li data-target="#style-links-file-external" bs-scrollspy>
+                                <a class="submenu-item" href="#style-links-file-external">
+                                  External &amp; File Links
+                                </a>
+                              </li>
                         </ul>
                       </li>
                       <li data-target="#style-tables" bs-scrollspy>
@@ -337,6 +349,23 @@
                           Images
                         </a>
                         <ul class="nav ">
+                        </ul>
+                      </li>
+                      <li data-target="#style-helpers" bs-scrollspy>
+                        <a class="menu-item" href="#style-helpers">
+                          Helper Classes
+                        </a>
+                        <ul class="nav ">
+                              <li data-target="#style-helpers-colors" bs-scrollspy>
+                                <a class="submenu-item" href="#style-helpers-colors">
+                                  Contextual Colors
+                                </a>
+                              </li>
+                              <li data-target="#style-helpers-backgrounds" bs-scrollspy>
+                                <a class="submenu-item" href="#style-helpers-backgrounds">
+                                  Contextual Backgrounds
+                                </a>
+                              </li>
                         </ul>
                       </li>
                 </ul>
@@ -457,7 +486,7 @@ be used in a unique context that defines what that icon means on the website.</p
                   <div class="section" id="style-typography-body">
                     <h3>Body Text</h3>
 
-                      <p>The default font family for text in the <code>&lt;body&gt;</code> is <em>Open Sans</em></p>
+                      <p>The default font family for text in the <code>&lt;body&gt;</code> is <em>Roboto</em></p>
 
 
                         <div class="panel panel-default">
@@ -478,7 +507,7 @@ be used in a unique context that defines what that icon means on the website.</p
                   <div class="section" id="style-typography-headings">
                     <h3>Headings</h3>
 
-                      <p>Heading use the <em>Lato</em> font family and are used for all page titles and page section titles.</p>
+                      <p>Heading use the <em>Open Sans</em> font family and are used for all page titles and page section titles.</p>
 
 
                         <div class="panel panel-default">
@@ -684,21 +713,53 @@ or UI/navigation that need to communicate those states to the user.</p>
                     <h3>External &amp; File Links</h3>
 
                       <p>Links links to external should be given the <code>.external-link</code> class. Links to download files website are automatically appended with a context icon.
-The icons lets the user know what to expect when they click the link. You can remove a link&#39;s icon manually with the <code>.no-icon</code> class.
-Use the <code>.no-icon</code> class cautiously - if you&#39;re not sure whether to use it, you probably shouldn&#39;t.</p>
+The icons lets the user know what to expect when they click the link.</p>
 <p><mark>TODO:</mark> Define when this differs via parent element context (i.e., in menus, footers, etc.)</p>
 
 
                       <div class="panel panel-default">
                         <div class="panel-body">
                             <ul class="unstyled-list">
+    <li><a class="external-link" href="http://codepen.io/ashleynolan/pen/rpjHg">Link to external website</a></li>
     <li><a href="pdf-file-path.pdf">PDF file link</a></li>
     <li><a href="word-file-path.xlsx">Excel file link</a></li>
     <li><a href="word-file-path.xls">Works for old Excel(*.xsl) extensions</a></li>
     <li><a href="excel-file-path.docx">Word file link</a></li>
     <li><a href="excel-file-path.doc">Works for old Word(*.doc) extensions</a></li>
-    <li><a href="http://codepen.io/ashleynolan/pen/rpjHg">Link to external website</a></li>
-    <li><a href="https://secure-site-url">Works with HTTPS too!</a></li>
+</ul>
+                        </div>
+                        <div class="panel-footer">
+                          <pre>
+                            <code class="html">/* External links with external-link class */
+&lt;a class=&quot;external-link&quot; href=&quot;http://codepen.io/ashleynolan/pen/rpjHg&quot;&gt;Link to external website&lt;/a&gt;
+&lt;a class=&quot;external-link&quot; href=&quot;http://codepen.io/ashleynolan/pen/rpjHg&quot; class=&quot;no-icon&quot;&gt;No link icon.&lt;/a&gt;
+/* Links to files get icons automatically added to them! */
+&lt;a href=&quot;pdf-file-path.pdf&quot;&gt;PDF file link&lt;/a&gt;
+&lt;a href=&quot;word-file-path.xlsx&quot;&gt;Excel file link&lt;/a&gt;
+&lt;a href=&quot;word-file-path.xls&quot;&gt;Works for old Excel(*.xsl) extensions&lt;/a&gt;
+&lt;a href=&quot;excel-file-path.docx&quot;&gt;Word file link&lt;/a&gt;
+&lt;a href=&quot;http://www.someotherdomain.com/excel-file-path.doc&quot;&gt;Works for old Word(*.doc) extensions&lt;/a&gt;</code>
+                          </pre>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="section" id="style-links-file-external">
+                    <h3>External &amp; File Links</h3>
+
+                      <p>Links links to external should be given the <code>.external-link</code> class. Links to download files website are automatically appended with a context icon.
+The icons lets the user know what to expect when they click the link.</p>
+<p><mark>TODO:</mark> Define when this differs via parent element context (i.e., in menus, footers, etc.)</p>
+
+
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                            <ul class="unstyled-list">
+    <li><a class="external-link" href="http://codepen.io/ashleynolan/pen/rpjHg">Link to external website</a></li>
+    <li><a href="pdf-file-path.pdf">PDF file link</a></li>
+    <li><a href="word-file-path.xlsx">Excel file link</a></li>
+    <li><a href="word-file-path.xls">Works for old Excel(*.xsl) extensions</a></li>
+    <li><a href="excel-file-path.docx">Word file link</a></li>
+    <li><a href="excel-file-path.doc">Works for old Word(*.doc) extensions</a></li>
 </ul>
                         </div>
                         <div class="panel-footer">
@@ -1104,6 +1165,66 @@ the form. Doing so changes <code>.form-group</code>s to behave as grid rows, so 
 <p><mark>TODO:</mark> Implement method to override responsive images</p>
 
 
+                  </div>
+                  <div class="section" id="style-helpers">
+                    <h2>Helper Classes</h2>
+
+
+                  </div>
+                  <div class="section" id="style-helpers-colors">
+                    <h3>Contextual Colors</h3>
+
+                      <p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
+
+
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                             <p class="text-muted">Yesterday I did not know how to eat gagh.</p>
+ <p class="text-primary">Commander William Riker of the Starship Enterprise.</p>
+ <p class="text-success">We finished our first sensor sweep of the neutral zone.</p>
+ <p class="text-info">The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules.</p>
+ <p class="text-warning">The Federation's gone; the Borg is everywhere!</p>
+ <p class="text-danger">Shields up! Rrrrred alert!</p>
+                        </div>
+                        <div class="panel-footer">
+                          <pre>
+                            <code class="html"> &lt;p class=&quot;text-muted&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;text-primary&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;text-success&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;text-info&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;text-warning&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;text-danger&quot;&gt;...&lt;/p&gt;</code>
+                          </pre>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="section" id="style-helpers-backgrounds">
+                    <h3>Contextual Backgrounds</h3>
+
+                      <p>Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.</p>
+<p><mark>Note:</mark> The <code>.bg-transparent</code> class uses <code>!important</code> and is meant to override the predefined background colors of other components.</p>
+
+
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                             <p class="bg-transparent">Yesterday I did not know how to eat gagh.</p>
+ <p class="bg-primary">Commander William Riker of the Starship Enterprise.</p>
+ <p class="bg-success">We finished our first sensor sweep of the neutral zone.</p>
+ <p class="bg-info">The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules.</p>
+ <p class="bg-warning">The Federation's gone; the Borg is everywhere!</p>
+ <p class="bg-danger">Shields up! Rrrrred alert!</p>
+                        </div>
+                        <div class="panel-footer">
+                          <pre>
+                            <code class="html"> &lt;p class=&quot;bg-transparent&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;bg-primary&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;bg-success&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;bg-info&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;bg-warning&quot;&gt;...&lt;/p&gt;
+ &lt;p class=&quot;bg-danger&quot;&gt;...&lt;/p&gt;</code>
+                          </pre>
+                        </div>
+                      </div>
                   </div>
             </div>
         </div>

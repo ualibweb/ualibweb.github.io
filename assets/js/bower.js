@@ -27,12 +27,14 @@ angular.module('duScroll', [
   .value('duScrollOffset', 0)
   //Default easing function for scroll animation
   .value('duScrollEasing', duScrollDefaultEasing)
+  //Which events on the container (such as body) should cancel scroll animations
+  .value('duScrollCancelOnEvents', 'scroll mousedown mousewheel touchmove keydown')
   //Whether or not to activate the last scrollspy, when page/container bottom is reached
   .value('duScrollBottomSpy', false);
 
 
 angular.module('duScroll.scrollHelpers', ['duScroll.requestAnimation'])
-.run(["$window", "$q", "cancelAnimation", "requestAnimation", "duScrollEasing", "duScrollDuration", "duScrollOffset", function($window, $q, cancelAnimation, requestAnimation, duScrollEasing, duScrollDuration, duScrollOffset) {
+.run(["$window", "$q", "cancelAnimation", "requestAnimation", "duScrollEasing", "duScrollDuration", "duScrollOffset", "duScrollCancelOnEvents", function($window, $q, cancelAnimation, requestAnimation, duScrollEasing, duScrollDuration, duScrollOffset, duScrollCancelOnEvents) {
   'use strict';
 
   var proto = {};
@@ -80,10 +82,11 @@ angular.module('duScroll.scrollHelpers', ['duScroll.requestAnimation'])
     var startTime = null, progress = 0;
     var el = this;
 
-    var cancelOnEvents = 'scroll mousedown mousewheel touchmove keydown';
     var cancelScrollAnimation = function($event) {
       if (!$event || (progress && $event.which > 0)) {
-        el.unbind(cancelOnEvents, cancelScrollAnimation);
+        if(duScrollCancelOnEvents) {
+          el.unbind(duScrollCancelOnEvents, cancelScrollAnimation);
+        }
         cancelAnimation(scrollAnimation);
         deferred.reject();
         scrollAnimation = null;
@@ -118,7 +121,9 @@ angular.module('duScroll.scrollHelpers', ['duScroll.requestAnimation'])
       if(percent < 1) {
         scrollAnimation = requestAnimation(animationStep);
       } else {
-        el.unbind(cancelOnEvents, cancelScrollAnimation);
+        if(duScrollCancelOnEvents) {
+          el.unbind(duScrollCancelOnEvents, cancelScrollAnimation);
+        }
         scrollAnimation = null;
         deferred.resolve();
       }
@@ -127,7 +132,9 @@ angular.module('duScroll.scrollHelpers', ['duScroll.requestAnimation'])
     //Fix random mobile safari bug when scrolling to top by hitting status bar
     el.duScrollTo(startLeft, startTop);
 
-    el.bind(cancelOnEvents, cancelScrollAnimation);
+    if(duScrollCancelOnEvents) {
+      el.bind(duScrollCancelOnEvents, cancelScrollAnimation);
+    }
 
     scrollAnimation = requestAnimation(animationStep);
     return deferred.promise;
@@ -604,7 +611,7 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
 
 /**
  * angular-strap
- * @version v2.2.3 - 2015-05-20
+ * @version v2.2.4 - 2015-05-28
  * @link http://mgcrea.github.io/angular-strap
  * @author Olivier Louvignes <olivier@mg-crea.com> (https://github.com/mgcrea)
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -786,125 +793,6 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
       } ]
     };
   });
-  angular.module('mgcrea.ngStrap.button', []).provider('$button', function() {
-    var defaults = this.defaults = {
-      activeClass: 'active',
-      toggleEvent: 'click'
-    };
-    this.$get = function() {
-      return {
-        defaults: defaults
-      };
-    };
-  }).directive('bsCheckboxGroup', function() {
-    return {
-      restrict: 'A',
-      require: 'ngModel',
-      compile: function postLink(element, attr) {
-        element.attr('data-toggle', 'buttons');
-        element.removeAttr('ng-model');
-        var children = element[0].querySelectorAll('input[type="checkbox"]');
-        angular.forEach(children, function(child) {
-          var childEl = angular.element(child);
-          childEl.attr('bs-checkbox', '');
-          childEl.attr('ng-model', attr.ngModel + '.' + childEl.attr('value'));
-        });
-      }
-    };
-  }).directive('bsCheckbox', [ '$button', '$$rAF', function($button, $$rAF) {
-    var defaults = $button.defaults;
-    var constantValueRegExp = /^(true|false|\d+)$/;
-    return {
-      restrict: 'A',
-      require: 'ngModel',
-      link: function postLink(scope, element, attr, controller) {
-        var options = defaults;
-        var isInput = element[0].nodeName === 'INPUT';
-        var activeElement = isInput ? element.parent() : element;
-        var trueValue = angular.isDefined(attr.trueValue) ? attr.trueValue : true;
-        if (constantValueRegExp.test(attr.trueValue)) {
-          trueValue = scope.$eval(attr.trueValue);
-        }
-        var falseValue = angular.isDefined(attr.falseValue) ? attr.falseValue : false;
-        if (constantValueRegExp.test(attr.falseValue)) {
-          falseValue = scope.$eval(attr.falseValue);
-        }
-        var hasExoticValues = typeof trueValue !== 'boolean' || typeof falseValue !== 'boolean';
-        if (hasExoticValues) {
-          controller.$parsers.push(function(viewValue) {
-            return viewValue ? trueValue : falseValue;
-          });
-          controller.$formatters.push(function(modelValue) {
-            return angular.equals(modelValue, trueValue);
-          });
-          scope.$watch(attr.ngModel, function(newValue, oldValue) {
-            controller.$render();
-          });
-        }
-        controller.$render = function() {
-          var isActive = angular.equals(controller.$modelValue, trueValue);
-          $$rAF(function() {
-            if (isInput) element[0].checked = isActive;
-            activeElement.toggleClass(options.activeClass, isActive);
-          });
-        };
-        element.bind(options.toggleEvent, function() {
-          scope.$apply(function() {
-            if (!isInput) {
-              controller.$setViewValue(!activeElement.hasClass('active'));
-            }
-            if (!hasExoticValues) {
-              controller.$render();
-            }
-          });
-        });
-      }
-    };
-  } ]).directive('bsRadioGroup', function() {
-    return {
-      restrict: 'A',
-      require: 'ngModel',
-      compile: function postLink(element, attr) {
-        element.attr('data-toggle', 'buttons');
-        element.removeAttr('ng-model');
-        var children = element[0].querySelectorAll('input[type="radio"]');
-        angular.forEach(children, function(child) {
-          angular.element(child).attr('bs-radio', '');
-          angular.element(child).attr('ng-model', attr.ngModel);
-        });
-      }
-    };
-  }).directive('bsRadio', [ '$button', '$$rAF', function($button, $$rAF) {
-    var defaults = $button.defaults;
-    var constantValueRegExp = /^(true|false|\d+)$/;
-    return {
-      restrict: 'A',
-      require: 'ngModel',
-      link: function postLink(scope, element, attr, controller) {
-        var options = defaults;
-        var isInput = element[0].nodeName === 'INPUT';
-        var activeElement = isInput ? element.parent() : element;
-        var value;
-        attr.$observe('value', function(v) {
-          value = constantValueRegExp.test(v) ? scope.$eval(v) : v;
-          controller.$render();
-        });
-        controller.$render = function() {
-          var isActive = angular.equals(controller.$modelValue, value);
-          $$rAF(function() {
-            if (isInput) element[0].checked = isActive;
-            activeElement.toggleClass(options.activeClass, isActive);
-          });
-        };
-        element.bind(options.toggleEvent, function() {
-          scope.$apply(function() {
-            controller.$setViewValue(value);
-            controller.$render();
-          });
-        });
-      }
-    };
-  } ]);
   angular.module('mgcrea.ngStrap.alert', [ 'mgcrea.ngStrap.modal' ]).provider('$alert', function() {
     var defaults = this.defaults = {
       animation: 'am-fade',
@@ -1815,7 +1703,7 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
         $dropdown.show = function() {
           show();
           $timeout(function() {
-            options.keyboard && $dropdown.$element.on('keydown', $dropdown.$onKeyDown);
+            options.keyboard && $dropdown.$element && $dropdown.$element.on('keydown', $dropdown.$onKeyDown);
             bodyEl.on('click', onBodyClick);
           }, 0, false);
           parentEl.hasClass('dropdown') && parentEl.addClass('open');
@@ -1823,7 +1711,7 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
         var hide = $dropdown.hide;
         $dropdown.hide = function() {
           if (!$dropdown.$isShown) return;
-          options.keyboard && $dropdown.$element.off('keydown', $dropdown.$onKeyDown);
+          options.keyboard && $dropdown.$element && $dropdown.$element.off('keydown', $dropdown.$onKeyDown);
           bodyEl.off('click', onBodyClick);
           parentEl.hasClass('dropdown') && parentEl.removeClass('open');
           hide();
@@ -1869,6 +1757,125 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
           if (dropdown) dropdown.destroy();
           options = null;
           dropdown = null;
+        });
+      }
+    };
+  } ]);
+  angular.module('mgcrea.ngStrap.button', []).provider('$button', function() {
+    var defaults = this.defaults = {
+      activeClass: 'active',
+      toggleEvent: 'click'
+    };
+    this.$get = function() {
+      return {
+        defaults: defaults
+      };
+    };
+  }).directive('bsCheckboxGroup', function() {
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      compile: function postLink(element, attr) {
+        element.attr('data-toggle', 'buttons');
+        element.removeAttr('ng-model');
+        var children = element[0].querySelectorAll('input[type="checkbox"]');
+        angular.forEach(children, function(child) {
+          var childEl = angular.element(child);
+          childEl.attr('bs-checkbox', '');
+          childEl.attr('ng-model', attr.ngModel + '.' + childEl.attr('value'));
+        });
+      }
+    };
+  }).directive('bsCheckbox', [ '$button', '$$rAF', function($button, $$rAF) {
+    var defaults = $button.defaults;
+    var constantValueRegExp = /^(true|false|\d+)$/;
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function postLink(scope, element, attr, controller) {
+        var options = defaults;
+        var isInput = element[0].nodeName === 'INPUT';
+        var activeElement = isInput ? element.parent() : element;
+        var trueValue = angular.isDefined(attr.trueValue) ? attr.trueValue : true;
+        if (constantValueRegExp.test(attr.trueValue)) {
+          trueValue = scope.$eval(attr.trueValue);
+        }
+        var falseValue = angular.isDefined(attr.falseValue) ? attr.falseValue : false;
+        if (constantValueRegExp.test(attr.falseValue)) {
+          falseValue = scope.$eval(attr.falseValue);
+        }
+        var hasExoticValues = typeof trueValue !== 'boolean' || typeof falseValue !== 'boolean';
+        if (hasExoticValues) {
+          controller.$parsers.push(function(viewValue) {
+            return viewValue ? trueValue : falseValue;
+          });
+          controller.$formatters.push(function(modelValue) {
+            return angular.equals(modelValue, trueValue);
+          });
+          scope.$watch(attr.ngModel, function(newValue, oldValue) {
+            controller.$render();
+          });
+        }
+        controller.$render = function() {
+          var isActive = angular.equals(controller.$modelValue, trueValue);
+          $$rAF(function() {
+            if (isInput) element[0].checked = isActive;
+            activeElement.toggleClass(options.activeClass, isActive);
+          });
+        };
+        element.bind(options.toggleEvent, function() {
+          scope.$apply(function() {
+            if (!isInput) {
+              controller.$setViewValue(!activeElement.hasClass('active'));
+            }
+            if (!hasExoticValues) {
+              controller.$render();
+            }
+          });
+        });
+      }
+    };
+  } ]).directive('bsRadioGroup', function() {
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      compile: function postLink(element, attr) {
+        element.attr('data-toggle', 'buttons');
+        element.removeAttr('ng-model');
+        var children = element[0].querySelectorAll('input[type="radio"]');
+        angular.forEach(children, function(child) {
+          angular.element(child).attr('bs-radio', '');
+          angular.element(child).attr('ng-model', attr.ngModel);
+        });
+      }
+    };
+  }).directive('bsRadio', [ '$button', '$$rAF', function($button, $$rAF) {
+    var defaults = $button.defaults;
+    var constantValueRegExp = /^(true|false|\d+)$/;
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function postLink(scope, element, attr, controller) {
+        var options = defaults;
+        var isInput = element[0].nodeName === 'INPUT';
+        var activeElement = isInput ? element.parent() : element;
+        var value;
+        attr.$observe('value', function(v) {
+          value = constantValueRegExp.test(v) ? scope.$eval(v) : v;
+          controller.$render();
+        });
+        controller.$render = function() {
+          var isActive = angular.equals(controller.$modelValue, value);
+          $$rAF(function() {
+            if (isInput) element[0].checked = isActive;
+            activeElement.toggleClass(options.activeClass, isActive);
+          });
+        };
+        element.bind(options.toggleEvent, function() {
+          scope.$apply(function() {
+            controller.$setViewValue(value);
+            controller.$render();
+          });
         });
       }
     };
@@ -2494,8 +2501,11 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
           if (options.backdrop) {
             $animate.enter(backdropElement, bodyElement, null);
           }
-          var promise = $animate.enter(modalElement, parent, after, enterAnimateCallback);
-          if (promise && promise.then) promise.then(enterAnimateCallback);
+          if (angular.version.minor <= 2) {
+            $animate.enter(modalElement, parent, after, enterAnimateCallback);
+          } else {
+            $animate.enter(modalElement, parent, after).then(enterAnimateCallback);
+          }
           $modal.$isShown = scope.$isShown = true;
           safeDigest(scope);
           var el = modalElement[0];
@@ -2523,8 +2533,11 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
           if (scope.$emit(options.prefixEvent + '.hide.before', $modal).defaultPrevented) {
             return;
           }
-          var promise = $animate.leave(modalElement, leaveAnimateCallback);
-          if (promise && promise.then) promise.then(leaveAnimateCallback);
+          if (angular.version.minor <= 2) {
+            $animate.leave(modalElement, leaveAnimateCallback);
+          } else {
+            $animate.leave(modalElement).then(leaveAnimateCallback);
+          }
           if (options.backdrop) {
             $animate.leave(backdropElement);
           }
@@ -3001,7 +3014,9 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
         $select.activate = function(index) {
           if (options.multiple) {
             $select.$isActive(index) ? scope.$activeIndex.splice(scope.$activeIndex.indexOf(index), 1) : scope.$activeIndex.push(index);
-            if (options.sort) scope.$activeIndex.sort();
+            if (options.sort) scope.$activeIndex.sort(function(a, b) {
+              return a - b;
+            });
           } else {
             scope.$activeIndex = index;
           }
@@ -3614,18 +3629,18 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
         $timepicker.show = function() {
           _show();
           $timeout(function() {
-            $timepicker.$element.on(isTouch ? 'touchstart' : 'mousedown', $timepicker.$onMouseDown);
+            $timepicker.$element && $timepicker.$element.on(isTouch ? 'touchstart' : 'mousedown', $timepicker.$onMouseDown);
             if (options.keyboard) {
-              element.on('keydown', $timepicker.$onKeyDown);
+              element && element.on('keydown', $timepicker.$onKeyDown);
             }
           }, 0, false);
         };
         var _hide = $timepicker.hide;
         $timepicker.hide = function(blur) {
           if (!$timepicker.$isShown) return;
-          $timepicker.$element.off(isTouch ? 'touchstart' : 'mousedown', $timepicker.$onMouseDown);
+          $timepicker.$element && $timepicker.$element.off(isTouch ? 'touchstart' : 'mousedown', $timepicker.$onMouseDown);
           if (options.keyboard) {
-            element.off('keydown', $timepicker.$onKeyDown);
+            element && element.off('keydown', $timepicker.$onKeyDown);
           }
           _hide(blur);
         };
@@ -3910,8 +3925,11 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
           $tooltip.$isShown = scope.$isShown = true;
           safeDigest(scope);
           $tooltip.$applyPlacement();
-          var promise = $animate.enter(tipElement, parent, after, enterAnimateCallback);
-          if (promise && promise.then) promise.then(enterAnimateCallback);
+          if (angular.version.minor <= 2) {
+            $animate.enter(tipElement, parent, after, enterAnimateCallback);
+          } else {
+            $animate.enter(tipElement, parent, after).then(enterAnimateCallback);
+          }
           safeDigest(scope);
           $$rAF(function() {
             if (tipElement) tipElement.css({
@@ -3950,8 +3968,11 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
           scope.$emit(options.prefixEvent + '.hide.before', $tooltip);
           _blur = blur;
           _tipToHide = tipElement;
-          var promise = $animate.leave(tipElement, leaveAnimateCallback);
-          if (promise && promise.then) promise.then(leaveAnimateCallback);
+          if (angular.version.minor <= 2) {
+            $animate.leave(tipElement, leaveAnimateCallback);
+          } else {
+            $animate.leave(tipElement).then(leaveAnimateCallback);
+          }
           $tooltip.$isShown = scope.$isShown = false;
           safeDigest(scope);
           if (options.keyboard && tipElement !== null) {
@@ -4428,17 +4449,17 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
         $typeahead.show = function() {
           show();
           $timeout(function() {
-            $typeahead.$element.on('mousedown', $typeahead.$onMouseDown);
+            $typeahead.$element && $typeahead.$element.on('mousedown', $typeahead.$onMouseDown);
             if (options.keyboard) {
-              element.on('keydown', $typeahead.$onKeyDown);
+              element && element.on('keydown', $typeahead.$onKeyDown);
             }
           }, 0, false);
         };
         var hide = $typeahead.hide;
         $typeahead.hide = function() {
-          $typeahead.$element.off('mousedown', $typeahead.$onMouseDown);
+          $typeahead.$element && $typeahead.$element.off('mousedown', $typeahead.$onMouseDown);
           if (options.keyboard) {
-            element.off('keydown', $typeahead.$onKeyDown);
+            element && element.off('keydown', $typeahead.$onKeyDown);
           }
           if (!options.autoSelect) $typeahead.activate(-1);
           hide();
@@ -4500,7 +4521,11 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
         });
         controller.$formatters.push(function(modelValue) {
           var displayValue = parsedOptions.displayValue(modelValue);
-          return displayValue === undefined ? '' : displayValue;
+          if (displayValue) return displayValue;
+          if (modelValue && typeof modelValue !== 'object') {
+            return modelValue;
+          }
+          return '';
         });
         controller.$render = function() {
           if (controller.$isEmpty(controller.$viewValue)) return element.val('');
@@ -4521,7 +4546,7 @@ angular.module('duScroll.scrollspy', ['duScroll.spyAPI'])
 })(window, document);
 /**
  * angular-strap
- * @version v2.2.3 - 2015-05-20
+ * @version v2.2.4 - 2015-05-28
  * @link http://mgcrea.github.io/angular-strap
  * @author Olivier Louvignes <olivier@mg-crea.com> (https://github.com/mgcrea)
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -4566,7 +4591,7 @@ angular.module('ualib.ui.templates', ['page/templates/page-section.tpl.html', 'p
 
 angular.module("page/templates/page-section.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("page/templates/page-section.tpl.html",
-    "<div id=\"{{section}}\" ng-transclude>\n" +
+    "<div class=\"page-slice\" id=\"{{section}}\" ng-transclude>\n" +
     "</div>");
 }]);
 
@@ -4631,7 +4656,7 @@ angular.module("tabs/templates/tabset.tpl.html", []).run(["$templateCache", func
  * angular-ui-bootstrap
  * http://angular-ui.github.io/bootstrap/
 
- * Version: 0.12.1 - 2015-05-15
+ * Version: 0.12.1 - 2015-05-27
  * License: MIT
  */
 angular.module("ui.bootstrap", ["ui.bootstrap.tpls", "ui.bootstrap.transition","ui.bootstrap.collapse","ui.bootstrap.accordion","ui.bootstrap.alert","ui.bootstrap.bindHtml","ui.bootstrap.buttons","ui.bootstrap.carousel","ui.bootstrap.dateparser","ui.bootstrap.position","ui.bootstrap.datepicker","ui.bootstrap.modal","ui.bootstrap.pagination","ui.bootstrap.tooltip","ui.bootstrap.popover","ui.bootstrap.progressbar","ui.bootstrap.rating","ui.bootstrap.timepicker","ui.bootstrap.typeahead"]);
