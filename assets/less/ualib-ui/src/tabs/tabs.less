@@ -1,0 +1,71 @@
+// Tabs
+//
+// Markup:
+//  <tabset>
+//    <tab heading="Tab 1">
+//      Tab 1 Content
+//    </tab>
+//    <tab heading="Tab 2">
+//      Tab 2 Content
+//    </tab>
+//    <tab heading="Tab 3">
+//      Tab 3 Content
+//    </tab>
+//    <tab heading="Tab 4">
+//      Tab 4 Content
+//    </tab>
+//  </tabset>
+//
+// Icon: fa-files-o
+//
+// MenuBlurb:
+// Easily create horizontal and vertical tabs
+//
+// Styleguide components.tabs
+
+.tabset-vertical {
+  > .tab-content {
+    position: relative;
+
+    // TODO: Look into creating fade-in mixin(s) to shared among components
+    > .tab-pane {
+      /*position: absolute;*/
+      top: 0;
+      width: 75%;
+      /*display: block;*/
+      opacity: 0;
+      -webkit-transition: opacity  .2s 0s;
+      -moz-transition: opacity  .2s 0s;
+      transition: opacity  .2s 0s;
+
+      &.active {
+        opacity: 1;
+        -webkit-transition: opacity  .2s .1s;
+        -moz-transition: opacity  .2s .1s;
+        transition: opacity  .2s .1s;
+      }
+    }
+  }
+}
+
+// Vertical Tabs
+//
+// Markup: tabs-vertical.html
+//
+// CodeTemplate:
+//  <tabset vertical="true" tab-class="col-md-3" content-class="col-md-9">
+//    <tab heading="Tab 1">
+//      Tab 1 Content
+//    </tab>
+//    <tab heading="Tab 2">
+//      Tab 2 Content
+//    </tab>
+//    <tab heading="Tab 3">
+//      Tab 3 Content
+//    </tab>
+//    <tab heading="Tab 4">
+//      Tab 4 Content
+//    </tab>
+//  </tabset>
+//
+// Styleguide components.tabs.vertical
